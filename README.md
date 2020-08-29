@@ -37,6 +37,15 @@
 [<img align="left" alt="GitHub" width="26px" src="https://raw.githubusercontent.com/github/explore/78df643247d429f6cc873026c0622819ad797942/topics/github/github.png" />][github]
 [<img align="left" alt="AWS" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/aws/aws.png" />][aws]
 
+<br/>
+<br/>
+
+---
+
+<summary>:zap: Github Stats</summary>
+
+<img align="left" alt="michaelstoffer's Github Stats" src="https://github-readme-stats.michaelstoffer.vercel.app/api?username=michaelstoffer&show_icons=true&hide_border=true" />
+
 [website]: https://michaelstoffer.com
 [twitter]: https://twitter.com/michaelstoffer
 [linkedin]: https://linkedin.com/in/michaelstoffer
