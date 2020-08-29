@@ -44,6 +44,8 @@
 
 <summary>:zap: Github Stats</summary>
 
+[![Top Langs](https://github-readme-stats.michaelstoffer.vercel.app/api/top-langs/?username=michaelstoffer&layout=compact)](https://github.com/michaelstoffer/github-readme-stats)
+
 <img align="left" alt="michaelstoffer's Github Stats" src="https://github-readme-stats.michaelstoffer.vercel.app/api?username=michaelstoffer&show_icons=true&hide_border=true" />
 
 [website]: https://michaelstoffer.com
