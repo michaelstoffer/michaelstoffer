@@ -10,6 +10,9 @@
 - 🥅 2020 Goals: Contribute more to Open Source projects
 - ⚡ Fun fact: I love Landscape and Nature Photography
 
+### Spotify Playing 🎧
+[<img src="https://novatorem.michaelstoffer.vercel.app/api/spotify-playing" alt="michaelstoffer Spotify Playing" width="350" />](https://open.spotify.com/user/michaelstoffer)
+
 ### Connect with me:
 
 [<img align="left" alt="michaelstoffer.com" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][website]
@@ -41,8 +44,6 @@
 <br/>
 
 ---
-
-<summary>:zap: Github Stats</summary>
 
 [![Top Langs](https://github-readme-stats.michaelstoffer.vercel.app/api/top-langs/?username=michaelstoffer&layout=compact)](https://github.com/michaelstoffer/github-readme-stats)
 
