@@ -45,7 +45,7 @@
 
 ---
 
-<center>![Visitor Count](https://profile-counter.glitch.me/michaelstoffer/count.svg)</center>
+![Visitor Count](https://profile-counter.glitch.me/michaelstoffer/count.svg)
 
 [website]: https://michaelstoffer.com
 [twitter]: https://twitter.com/michaelstoffer
