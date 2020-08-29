@@ -11,7 +11,7 @@
 - ⚡ Fun fact: I love Landscape and Nature Photography
 
 ### Spotify Playing 🎧
-[<img src="https://novatorem.michaelstoffer.vercel.app/api/spotify-playing" alt="michaelstoffer Spotify Playing" width="350" />](https://open.spotify.com/user/michaelstoffer)
+[<img src="https://novatorem.michaelstoffer.vercel.app/api/spotify-playing" alt="michaelstoffer Spotify Playing" width="350" />](https://open.spotify.com/user/michaelstoffer?si=WVxYdqH2Tmi4tU7nkdWICA)
 
 ### Connect with me:
 
