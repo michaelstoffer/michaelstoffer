@@ -3,11 +3,11 @@
 [![Website](https://img.shields.io/website?label=michaelstoffer.com&style=for-the-badge&url=https%3A%2F%2Fmichaelstoffer.com)](https://www.michaelstoffer.com)
 [![Twitter Follow](https://img.shields.io/twitter/follow/michaelstoffer?color=1DA1F2&logo=twitter&style=for-the-badge)](https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fgithub.com%2Fmichaelstoffer&screen_name=michaelstoffer)
 
-## I'm a Single Father, Developer, and Photographer!
+## I'm a Single Father, Software Developer, and Photographer!
 
-- 🌱 I’m currently learning iOS Development 📱
+- 🌱 I’m infatuated with iOS Development at the moment 📱
 - 👯 I’m looking to collaborate with other content creators
-- 🥅 2020 Goals: Contribute more to Open Source projects
+- 🥅 2021 Goals: Contribute more to Open Source projects
 - ⚡ Fun fact: I love Landscape and Nature Photography
 
 ## Spotify Playing 🎧
