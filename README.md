@@ -10,10 +10,6 @@
 - 🥅 2021 Goals: Contribute more to Open Source projects
 - ⚡ Fun fact: I love Landscape and Nature Photography
 
-## Spotify Playing 🎧
-
-[![Spotify](https://novatorem-git-master.michaelstoffer.vercel.app/api/spotify)](https://open.spotify.com/user/michaelstoffer)
-
 ### Connect with me:
 
 [<img align="left" alt="michaelstoffer.com" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][website]
