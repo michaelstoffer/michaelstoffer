@@ -7,7 +7,7 @@
 
 - 🌱 I’m infatuated with iOS Development at the moment 📱
 - 👯 I’m looking to collaborate with other content creators
-- 🥅 2021 Goals: Contribute more to Open Source projects
+- 🥅 2025 Goals: Build an Open Source project
 - ⚡ Fun fact: I love Landscape and Nature Photography
 
 ### Connect with me:
@@ -44,7 +44,7 @@
 ![Visitor Count](https://profile-counter.glitch.me/michaelstoffer/count.svg)
 
 [website]: https://michaelstoffer.com
-[twitter]: https://twitter.com/michaelstoffer
+[twitter]: https://x.com/michaelstoffer
 [linkedin]: https://linkedin.com/in/michaelstoffer
 [xcode]: https://developer.apple.com/xcode/
 [swift]: https://developer.apple.com/swift/
