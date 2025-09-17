@@ -3,7 +3,6 @@
 namespace App\Support;
 
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Str;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 class MusicRepository
@@ -26,8 +25,14 @@ class MusicRepository
                     'title' => $m['title'] ?? '',
                     'description' => $m['description'] ?? ($m['summary'] ?? ''),
                     'duration' => $m['duration'] ?? null,
+                    'key' => $m['key'] ?? null,
+                    'bpm' => $m['bpm'] ?? null,
                     'audioSrc' => $m['audioSrc'] ?? null,
                     'cover' => $m['cover'] ?? null,
+                    'socialImage' => $m['socialImage'] ?? null,
+                    'videoEmbed' => $m['videoEmbed'] ?? null,
+                    'downloads' => $m['downloads'] ?? [],
+                    'body' => $doc->body() ?? '',
                     'tags' => $m['tags'] ?? [],
                 ];
             }

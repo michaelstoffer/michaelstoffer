@@ -1,0 +1,50 @@
+<?php
+
+// app/Support/PostRepository.php
+namespace App\Support;
+
+use Illuminate\Support\Facades\Cache;
+use Spatie\YamlFrontMatter\YamlFrontMatter;
+use League\CommonMark\CommonMarkConverter;
+
+class PostRepository
+{
+    protected string $base;
+    protected CommonMarkConverter $md;
+
+    public function __construct()
+    {
+        $this->base = resource_path('content/blog');
+        $this->md = new CommonMarkConverter(['html_input' => 'strip', 'allow_unsafe_links' => false]);
+    }
+
+    public function latest(int $limit = 20): array
+    {
+        $files = array_reverse(glob($this->base.'/*.md'));
+        $posts = array_map(fn($f) => $this->parse($f), $files);
+        usort($posts, fn($a,$b) => strcmp($b['published_at'], $a['published_at']));
+        return array_slice($posts, 0, $limit);
+    }
+
+    public function find(string $slug): array
+    {
+        $file = $this->base."/$slug.md";
+        abort_unless(file_exists($file), 404);
+        return $this->parse($file);
+    }
+
+    protected function parse(string $file): array
+    {
+        $doc = YamlFrontMatter::parseFile($file);
+        $m = $doc->matter();
+        return [
+            'slug' => pathinfo($file, PATHINFO_FILENAME),
+            'title' => $m['title'] ?? 'Untitled',
+            'excerpt' => $m['excerpt'] ?? null,
+            'cover' => $m['cover'] ?? null,
+            'published_at' => $m['published_at'] ?? now()->toDateString(),
+            'updated_at' => $m['updated_at'] ?? null,
+            'html' => $this->md->convert((string) $doc->body())->getContent(),
+        ];
+    }
+}

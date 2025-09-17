@@ -2,42 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Support\GalleryRepository;
 use Inertia\Inertia;
-use Illuminate\Support\Arr;
 
 class PhotographyController extends Controller
 {
     public function index()
     {
         // TODO: replace with Markdown/DB in 7D
-        $galleries = [
-            [
-                'slug' => 'portraits',
-                'title' => 'Portraits',
-                'description' => 'Clean, honest portraits—natural light and simple sets.',
-                'cover' => '/media/photography/portraits/cover.jpg',
-                'count' => 9,
-                'tags' => ['people','studio','natural light'],
-            ],
-            [
-                'slug' => 'brand-sets',
-                'title' => 'Brand & Product Sets',
-                'description' => 'Crisp product shots and small brand stories.',
-                'cover' => '/media/photography/brand-sets/cover.jpg',
-                'count' => 8,
-                'tags' => ['product','brand'],
-            ],
-            [
-                'slug' => 'landscapes',
-                'title' => 'Landscapes',
-                'description' => 'Quiet places, strong lines—timeless scenes.',
-                'cover' => '/media/photography/landscapes/cover.jpg',
-                'count' => 10,
-                'tags' => ['nature','outdoors'],
-            ],
-        ];
-
-        //$galleries = app(App\Support\GalleryRepository::class)->all();
+        $galleries = app(GalleryRepository::class)->all();
 
         return Inertia::render('Photography', compact('galleries'));
     }
@@ -95,8 +68,7 @@ class PhotographyController extends Controller
         ];
 
         abort_unless(array_key_exists($slug, $map), 404);
-        $gallery = $map[$slug];
-        //$gallery = app(App\Support\GalleryRepository::class)->find($slug);
+        $gallery = app(GalleryRepository::class)->find($slug);
         $related = collect($map)->except($slug)->map(function ($g, $s) {
             return [
                 'slug' => $s,
