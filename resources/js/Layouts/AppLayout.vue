@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { Link } from '@inertiajs/vue3'
+import GlobalSchema from '@/Components/GlobalSchema.vue'
 
 // Optional site-wide props (location, email, social)
 const props = defineProps({
@@ -82,5 +83,7 @@ const nav = [
                 </nav>
             </div>
         </footer>
+
+        <GlobalSchema />
     </div>
 </template>

@@ -23,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
         Inertia::share('site', [
             'name' => 'Michael Stoffer',
             'tagline' => "Engineer • Songwriter • Photographer",
+            'url'  => config('app.url', 'https://www.michaelstoffer.com'),
             'location' => 'Myrtle Beach, SC',
             'email' => 'mstoffer@michaelstoffer.com',
             'socials' => [
