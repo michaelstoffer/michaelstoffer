@@ -3,7 +3,7 @@ import SeoHead from '@/Components/SeoHead.vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import SongCard from '@/Components/SongCard.vue'
 import { marked } from 'marked'
-import {computed} from "vue";
+import {computed} from "vue"
 
 const props = defineProps({
     slug: { type: String, required: true },

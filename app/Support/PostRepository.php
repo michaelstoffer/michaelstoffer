@@ -18,7 +18,7 @@ class PostRepository
         $this->md = new CommonMarkConverter(['html_input' => 'strip', 'allow_unsafe_links' => false]);
     }
 
-    public function latest(int $limit = 20): array
+    public function latest(int $limit = 100): array
     {
         $files = array_reverse(glob($this->base.'/*.md'));
         $posts = array_map(fn($f) => $this->parse($f), $files);
@@ -44,7 +44,8 @@ class PostRepository
             'cover' => $m['cover'] ?? null,
             'published_at' => $m['published_at'] ?? now()->toDateString(),
             'updated_at' => $m['updated_at'] ?? null,
-            'html' => $this->md->convert((string) $doc->body())->getContent(),
+            'html' => $doc->body(),
+            'tags' => $m['tags'] ?? [],
         ];
     }
 }
