@@ -3,7 +3,7 @@ title: Type-Safe Shared Data and Page Props in Inertia.js Made Easy
 excerpt: When working with Inertia.js, passing shared data and page props between your backend and frontend can sometimes feel a bit overwhelming. If you've ever...
 cover: /media/blog/type-safe-shared-data-and-page-props-in-inertia-js-made-easy/cover.webp
 published_at: "2025-03-14 08:00:00 -0400"
-updated_at: "2025-03-14 08:00:00 -0400"
+modified_at: "2025-03-14 08:00:00 -0400"
 tags: ["Frontend", "Development", "Laravel"]
 ---
 

@@ -3,7 +3,7 @@ title: PHP Syntax - The details you should know
 excerpt: The absolute most important thing that we need to learn about php syntax are the PHP Delimiters. PHP can only parse code that is within its Delimiters.
 cover: /media/blog/php-syntax-the-details-you-should-know/cover.webp
 published_at: "2016-08-03 10:05:00 -0400"
-updated_at: "2016-08-03 10:05:00 -0400"
+modified_at: "2016-08-03 10:05:00 -0400"
 tags: ["Development"]
 ---
 

@@ -3,7 +3,7 @@ title: "Custom Software Pricing: Key Factors & Costs Explained"
 excerpt: In today's tech-driven world, businesses rely on software to streamline operations, enhance customer experiences, and...
 cover: /media/blog/custom-software-pricing-key-factors-costs-explained/cover.webp
 published_at: "2025-03-26 08:00:00 -0400"
-updated_at: "2025-03-26 08:00:00 -0400"
+modified_at: "2025-03-26 08:00:00 -0400"
 tags: ["Development"]
 ---
 

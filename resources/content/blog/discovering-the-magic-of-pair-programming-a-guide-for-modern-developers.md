@@ -3,7 +3,7 @@ title: "Discovering the Magic of Pair Programming: A Guide for Modern Developers
 excerpt: Have you ever wondered how two minds working together can produce cleaner, more efficient code? Welcome to the world of pair programming...
 cover: /media/blog/discovering-the-magic-of-pair-programming-a-guide-for-modern-developers/cover.webp
 published_at: "2025-04-02 08:00:00 -0400"
-updated_at: "2025-04-02 08:00:00 -0400"
+modified_at: "2025-04-02 08:00:00 -0400"
 tags: ["Development", "Tools"]
 ---
 

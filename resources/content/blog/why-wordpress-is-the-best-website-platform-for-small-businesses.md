@@ -3,7 +3,7 @@ title: Why WordPress Is the Best Website Platform for Small Businesses
 excerpt: If you’re a small business owner, you know that having an online presence is essential. But with so many website platforms available...
 cover: /media/blog/why-wordpress-is-the-best-website-platform-for-small-businesses/cover.webp
 published_at: "2025-03-24 08:00:00 -0400"
-updated_at: "2025-03-24 08:00:00 -0400"
+modified_at: "2025-03-24 08:00:00 -0400"
 tags: ["Development", "SEO"]
 ---
 

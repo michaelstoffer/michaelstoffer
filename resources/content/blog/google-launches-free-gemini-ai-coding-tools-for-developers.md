@@ -3,7 +3,7 @@ title: Google Launches Free Gemini AI Coding Tools for Developers
 excerpt: Discover Google's new free Gemini AI coding tools designed to help developers write better code, streamline processes, and boost productivity.
 cover: /media/blog/google-launches-free-gemini-ai-coding-tools-for-developers/cover.webp
 published_at: "2025-03-15 08:00:00 -0400"
-updated_at: "2025-03-15 08:00:00 -0400"
+modified_at: "2025-03-15 08:00:00 -0400"
 tags: ["Development", "Tools", "AI"]
 ---
 

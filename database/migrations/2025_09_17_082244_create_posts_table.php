@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('body');
             $table->string('cover')->nullable();
             $table->timestamp('published_at')->index();
-            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('modified_at')->nullable();
             $table->timestamps();
         });
     }

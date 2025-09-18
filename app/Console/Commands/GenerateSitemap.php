@@ -33,6 +33,11 @@ class GenerateSitemap extends Command
                     $map->add(Url::create('/photography/'.$g['slug']));
                 }
             }
+            if (class_exists('App\Support\PostRepository')) {
+                foreach (app('App\\Support\\PostRepository')->all() as $p) {
+                    $map->add(Url::create('/blog/'.$p['slug']));
+                }
+            }
         } catch (\Throwable $e) { /* keep sitemap resilient */ }
 
         $map->writeToFile(public_path('sitemap.xml'));

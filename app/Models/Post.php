@@ -23,7 +23,7 @@ class Post extends Model
         'body',
         'cover',
         'published_at',
-        'updated_at',
+        'modified_at',
     ];
 
     /**
@@ -35,7 +35,7 @@ class Post extends Model
     {
         return [
             'published_at' => 'datetime',
-            'updated_at' => 'datetime',
+            'modified_at' => 'datetime',
         ];
     }
 

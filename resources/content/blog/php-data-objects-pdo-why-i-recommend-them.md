@@ -3,7 +3,7 @@ title: PDO (PHP Data Objects) – Why I recommend them
 excerpt: PHP Data Objects, also known as PDO, is an interface for accessing databases in PHP without tying code to a specific database. This is my favorite method...
 cover: /media/blog/php-data-objects-pdo-why-i-recommend-them/cover.webp
 published_at: "2016-08-12 08:00:00 -0400"
-updated_at: "2016-08-12 08:00:00 -0400"
+modified_at: "2016-08-12 08:00:00 -0400"
 tags: ["Development"]
 ---
 

@@ -3,7 +3,7 @@ title: PHP - A brief history about PHP and its Syntax
 excerpt: PHP is probably the most widely used programming language around. Before I begin teaching the basics, I would like to explain a little about the history...
 cover: /media/blog/php-a-brief-history-about-php-and-its-syntax/cover.webp
 published_at: "2016-08-06 08:00:00 -0400"
-updated_at: "2016-08-06 08:00:00 -0400"
+modified_at: "2016-08-06 08:00:00 -0400"
 tags: ["Development"]
 ---
 

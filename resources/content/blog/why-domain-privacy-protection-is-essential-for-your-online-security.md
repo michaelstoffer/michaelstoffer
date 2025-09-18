@@ -3,7 +3,7 @@ title: Why Domain Privacy Protection Is Essential for Your Online Security
 excerpt: Learn why domain privacy protection is crucial for online security, how it works, and how it keeps your personal information safe.
 cover: /media/blog/why-domain-privacy-protection-is-essential-for-your-online-security/cover.webp
 published_at: "2025-03-22 08:00:00 -0400"
-updated_at: "2025-03-22 08:00:00 -0400"
+modified_at: "2025-03-22 08:00:00 -0400"
 tags: ["Development"]
 ---
 

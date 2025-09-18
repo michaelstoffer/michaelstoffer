@@ -3,7 +3,7 @@ title: Best PHP Frameworks to Streamline Web Development in 2025
 excerpt: Discover the best PHP frameworks to streamline your web development in 2025. Learn about Laravel, Symfony, CodeIgniter, and more to...
 cover: /media/blog/best-php-frameworks-to-streamline-web-development-in-2025/cover.webp
 published_at: "2025-03-18 08:00:00 -0400"
-updated_at: "2025-03-18 08:00:00 -0400"
+modified_at: "2025-03-18 08:00:00 -0400"
 tags: ["Development", "Laravel"]
 ---
 

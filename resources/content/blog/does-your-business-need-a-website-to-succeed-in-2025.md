@@ -3,7 +3,7 @@ title: Does Your Business Need a Website to Succeed in 2025?
 excerpt: Wondering if your business needs a website in 2025? Explore the benefits, challenges, and real-world impact of a strong online presence.
 cover: /media/blog/does-your-business-need-a-website-to-succeed-in-2025/cover.webp
 published_at: "2025-03-13 08:00:00 -0400"
-updated_at: "2025-03-13 08:00:00 -0400"
+modified_at: "2025-03-13 08:00:00 -0400"
 tags: ["Development", "SEO"]
 ---
 

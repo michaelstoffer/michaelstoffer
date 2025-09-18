@@ -3,7 +3,7 @@ title: Developers Accelerate Software Development by Embracing AI Agents
 excerpt: Discover how developers are using AI agents to accelerate software development, boost productivity, and reduce coding errors. Learn the benefits and challenges of AI-driven coding.
 cover: /media/blog/developers-accelerate-software-development-by-embracing-ai-agents/cover.webp
 published_at: "2025-03-11 08:00:00 -0400"
-updated_at: "2025-03-11 08:00:00 -0400"
+modified_at: "2025-03-11 08:00:00 -0400"
 tags: ["Tools", "AI", "Development"]
 ---
 

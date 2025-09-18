@@ -3,7 +3,7 @@ title: How to Add URL Fragments to Laravel Pagination Links
 excerpt: Pagination is a must-have when dealing with large datasets in Laravel applications. However, what if you want to add URL fragments...
 cover: /media/blog/how-to-add-url-fragments-to-laravel-pagination-links/cover.webp
 published_at: "2025-03-16 08:00:00 -0400"
-updated_at: "2025-03-16 08:00:00 -0400"
+modified_at: "2025-03-16 08:00:00 -0400"
 tags: ["Laravel", "Development"]
 ---
 

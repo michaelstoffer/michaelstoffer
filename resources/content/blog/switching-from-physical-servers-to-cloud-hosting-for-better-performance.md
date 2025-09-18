@@ -3,7 +3,7 @@ title: Switching from Physical Servers to Cloud Hosting for Better Performance
 excerpt: Learn how switching from physical servers to cloud hosting can improve performance, reduce costs, and enhance scalability.
 cover: /media/blog/switching-from-physical-servers-to-cloud-hosting-for-better-performance/cover.webp
 published_at: "2025-03-17 08:00:00 -0400"
-updated_at: "2025-03-17 08:00:00 -0400"
+modified_at: "2025-03-17 08:00:00 -0400"
 tags: ["Development"]
 ---
 

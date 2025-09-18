@@ -18,14 +18,14 @@ const ld = {
     image: props.post.cover || '/og.jpg',
     author: { '@type':'Person', name:'Michael Stoffer' },
     datePublished: props.post.published_at,
-    dateModified: props.post.updated_at || props.post.published_at,
+    dateModified: props.post.modified_at || props.post.published_at,
     mainEntityOfPage: typeof window !== 'undefined' ? `${window.location.origin}/blog/${props.post.slug}` : ''
 }
 </script>
 
 <template>
     <AppLayout>
-        <SeoHead :title="post.title + ' — Blog'" :description="post.excerpt" :image="post.cover" type="article" :published-time="post.published_at" :modified-time="post.updated_at" />
+        <SeoHead :title="post.title + ' — Blog'" :description="post.excerpt" :image="post.cover" type="article" :published-time="post.published_at" :modified-time="post.modified_at" />
         <JsonLd :data="ld" />
 
         <section class="pt-10 sm:pt-14">
@@ -37,7 +37,7 @@ const ld = {
                 <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">{{ post.title }}</h1>
                 <p class="mt-2 text-xs text-slate-500">
                     <time :datetime="post.published_at">{{ new Date(post.published_at).toLocaleDateString() }}</time>
-                    <span v-if="post.updated_at && post.updated_at !== post.published_at"> • Updated <time :datetime="post.updated_at">{{ new Date(post.updated_at).toLocaleDateString() }}</time></span>
+                    <span v-if="post.modified_at && post.modified_at !== post.published_at"> • Updated <time :datetime="post.modified_at">{{ new Date(post.modified_at).toLocaleDateString() }}</time></span>
                 </p>
 
                 <!-- Tags -->

@@ -3,7 +3,7 @@ title: Laravel 12.1 Released With New Model Testing Methods and Improvements
 excerpt: If you're a Laravel developer, get ready for some exciting updates! Laravel 12.1 is here, and it comes with enhanced model testing methods and...
 cover: /media/blog/laravel-12-1-released-with-new-model-testing-methods-and-improvements/cover.webp
 published_at: "2025-03-10 08:00:00 -0400"
-updated_at: "2025-03-10 08:00:00 -0400"
+modified_at: "2025-03-10 08:00:00 -0400"
 tags: ["Laravel", "Development"]
 ---
 

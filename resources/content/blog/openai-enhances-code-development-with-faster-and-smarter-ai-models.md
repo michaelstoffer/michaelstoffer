@@ -3,7 +3,7 @@ title: OpenAI Enhances Code Development with Faster and Smarter AI Models
 excerpt: Discover how OpenAI's latest AI models are revolutionizing code development by making programming faster and smarter. Learn more here!
 cover: /media/blog/openai-enhances-code-development-with-faster-and-smarter-ai-models/cover.webp
 published_at: "2025-03-21 08:00:00 -0400"
-updated_at: "2025-03-21 08:00:00 -0400"
+modified_at: "2025-03-21 08:00:00 -0400"
 tags: ["Development", "AI"]
 ---
 

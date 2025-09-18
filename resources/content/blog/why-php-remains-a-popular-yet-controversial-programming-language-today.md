@@ -3,7 +3,7 @@ title: PHP Loops, While Loops, For Loops, Foreach Loops
 excerpt: PHP Loops can sometimes be a bit tricky. PHP loops are a sequence of statements which are specified once but may be carried out several times in succession.
 cover: /media/blog/why-php-remains-a-popular-yet-controversial-programming-language-today/cover.webp
 published_at: "2025-03-09 13:26:00 -0400"
-updated_at: "2025-03-09 13:26:00 -0400"
+modified_at: "2025-03-09 13:26:00 -0400"
 tags: ["Development"]
 ---
 

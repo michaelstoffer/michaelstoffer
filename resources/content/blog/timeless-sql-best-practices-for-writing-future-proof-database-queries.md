@@ -3,7 +3,7 @@ title: Timeless SQL Best Practices for Writing Future-Proof Database Queries
 excerpt: Databases are the backbone of modern applications, powering everything from small websites to massive tech platforms. Writing efficient...
 cover: /media/blog/timeless-sql-best-practices-for-writing-future-proof-database-queries/cover.webp
 published_at: "2025-03-25 08:00:00 -0400"
-updated_at: "2025-03-25 08:00:00 -0400"
+modified_at: "2025-03-25 08:00:00 -0400"
 tags: ["Development"]
 ---
 

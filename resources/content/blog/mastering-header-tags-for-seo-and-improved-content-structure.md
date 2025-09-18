@@ -3,7 +3,7 @@ title: Mastering Header Tags for SEO and Improved Content Structure
 excerpt: When it comes to creating great content for your website, structure is everything. Think about when you open a book—what helps you navigate...
 cover: /media/blog/mastering-header-tags-for-seo-and-improved-content-structure/cover.webp
 published_at: "2025-03-23 08:00:00 -0400"
-updated_at: "2025-03-23 08:00:00 -0400"
+modified_at: "2025-03-23 08:00:00 -0400"
 tags: ["SEO", "Development"]
 ---
 

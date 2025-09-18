@@ -43,7 +43,7 @@ class PostRepository
             'excerpt' => $m['excerpt'] ?? null,
             'cover' => $m['cover'] ?? null,
             'published_at' => $m['published_at'] ?? now()->toDateString(),
-            'updated_at' => $m['updated_at'] ?? null,
+            'modified_at' => $m['modified_at'] ?? null,
             'html' => $doc->body(),
             'tags' => $m['tags'] ?? [],
         ];

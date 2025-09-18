@@ -24,7 +24,7 @@ class PostFactory extends Factory
             'body' => fake()->paragraphs(3, true),
             'cover' => fake()->optional()->imageUrl(),
             'published_at' => fake()->dateTimeBetween('-1 year', 'now'),
-            'updated_at' => null,
+            'modified_at' => null,
         ];
     }
 }

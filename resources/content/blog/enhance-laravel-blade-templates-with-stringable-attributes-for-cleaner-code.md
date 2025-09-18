@@ -3,7 +3,7 @@ title: Enhance Laravel Blade Templates With Stringable Attributes for Cleaner Co
 excerpt: Laravel is known for making development simpler, and its Blade templating engine plays a big part in that. But as projects grow...
 cover: /media/blog/enhance-laravel-blade-templates-with-stringable-attributes-for-cleaner-code/cover.webp
 published_at: "2025-03-20 08:00:00 -0400"
-updated_at: "2025-03-20 08:00:00 -0400"
+modified_at: "2025-03-20 08:00:00 -0400"
 tags: ["Laravel", "Development"]
 ---
 

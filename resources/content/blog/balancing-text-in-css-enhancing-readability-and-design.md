@@ -3,7 +3,7 @@ title: "Balancing Text in CSS: Enhancing Readability and Design"
 excerpt: Learn how to achieve balanced text wrapping in CSS using the text-wrap property for improved readability and design aesthetics.
 cover: /media/blog/balancing-text-in-css-enhancing-readability-and-design/cover.webp
 published_at: "2025-03-30 08:00:00 -0400"
-updated_at: "2025-03-30 08:00:00 -0400"
+modified_at: "2025-03-30 08:00:00 -0400"
 tags: ["Frontend"]
 ---
 

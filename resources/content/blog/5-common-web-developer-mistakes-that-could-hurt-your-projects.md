@@ -3,7 +3,7 @@ title: 5 Common Web Developer Mistakes That Could Hurt Your Projects
 excerpt: Discover the top 5 common mistakes web developers make and learn how to avoid them to enhance your coding skills and project success.
 cover: /media/blog/5-common-web-developer-mistakes-that-could-hurt-your-projects/cover.webp
 published_at: "2025-03-28 08:00:00 -0400"
-updated_at: "2025-03-28 08:00:00 -0400"
+modified_at: "2025-03-28 08:00:00 -0400"
 tags: ["Development"]
 ---
 

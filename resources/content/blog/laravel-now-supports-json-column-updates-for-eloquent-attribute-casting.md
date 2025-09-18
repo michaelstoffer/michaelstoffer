@@ -3,7 +3,7 @@ title: Laravel Now Supports JSON Column Updates for Eloquent Attribute Casting
 excerpt: Great news for Laravel developers! If you’ve ever worked with JSON columns in your database, you know how tricky updates can be. Well, Laravel just made...
 cover: /media/blog/laravel-now-supports-json-column-updates-for-eloquent-attribute-casting/cover.webp
 published_at: "2025-03-12 08:00:00 -0400"
-updated_at: "2025-03-12 08:00:00 -0400"
+modified_at: "2025-03-12 08:00:00 -0400"
 tags: ["Laravel", "Development"]
 ---
 

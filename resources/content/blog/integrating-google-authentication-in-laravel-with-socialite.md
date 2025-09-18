@@ -3,7 +3,7 @@ title: Integrating Google Authentication in Laravel with Socialite and Google Cl
 excerpt: Learn how to integrate Google authentication into your Laravel application using Laravel Socialite and the Google Client PHP Library.
 cover: /media/blog/integrating-google-authentication-in-laravel-with-socialite/cover.webp
 published_at: "2025-03-29 08:00:00 -0400"
-updated_at: "2025-03-29 08:00:00 -0400"
+modified_at: "2025-03-29 08:00:00 -0400"
 tags: ["Laravel", "Development"]
 ---
 
