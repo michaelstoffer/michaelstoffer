@@ -16,6 +16,6 @@ const ld = [
 </script>
 <template>
     <Head>
-        <script type="application/ld+json">{{ JSON.stringify(ld) }}</script>
+        <component is="script" type="application/ld+json">{{ JSON.stringify(ld) }}</component>
     </Head>
 </template>
