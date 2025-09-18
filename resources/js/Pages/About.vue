@@ -15,7 +15,7 @@ import headshotImage from '../../../public/media/about/headshot.jpg';
                 <div>
                     <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">About</h1>
                     <div class="prose prose-slate max-w-none mt-6">
-                        <p>I build practical software with a craftsman’s eye and a parent’s patience. On the engineering side, I ship Laravel/Vue products, integrations, and internal tools that stay easy to maintain. On the creative side, I write educational children’s songs and keep a camera close for portraits, brand sets, and the occasional quiet landscape.</p>
+                        <p>I build practical software with a craftsman’s eye and a parent’s patience. On the engineering side, I ship Laravel/Vue products, integrations, and internal tools that stay easy to maintain. On the creative side, I write educational children’s songs as well as other music and keep a camera close for portraits, brand sets, and the occasional quiet landscape.</p>
                         <p>I like traditions that work and tools that disappear. The job is to deliver something dependable—clear scope, steady cadence, and a handoff the next person will appreciate.</p>
                     </div>
 
@@ -33,9 +33,9 @@ import headshotImage from '../../../public/media/about/headshot.jpg';
                     <section class="mt-10">
                         <h2 class="text-xl font-semibold text-slate-900">Timeline</h2>
                         <ol class="mt-4 space-y-3 text-sm text-slate-700">
-                            <li><span class="font-medium text-slate-900">Today —</span> Senior full‑stack engineer; children’s songwriter; photographer.</li>
-                            <li><span class="font-medium text-slate-900">2018–Present —</span> Laravel + Vue feature work, integrations (auth, HubSpot, webhooks), PDFs/dashboards, and internal tools.</li>
-                            <li><span class="font-medium text-slate-900">2013–2016 —</span> Built and launched client sites; learned the value of simple, durable stacks.</li>
+                            <li><span class="font-medium text-slate-900">Today —</span> Senior full‑stack engineer; songwriter; photographer.</li>
+                            <li><span class="font-medium text-slate-900">2015–Present —</span> Laravel + Vue feature work, integrations (auth, HubSpot, webhooks), PDFs/dashboards, and internal tools.</li>
+                            <li><span class="font-medium text-slate-900">2008–2015 —</span> Built and launched client sites; learned the value of simple, durable stacks.</li>
                             <li><span class="font-medium text-slate-900">Earlier —</span> Grew up making things—music, code, and photos—one careful iteration at a time.</li>
                         </ol>
                     </section>
@@ -49,8 +49,8 @@ import headshotImage from '../../../public/media/about/headshot.jpg';
                                 <p class="mt-1">Laravel/Vue builds, integrations, reports/PDFs, admin tools, CI/CD hygiene, observability.</p>
                             </div>
                             <div>
-                                <h3 class="font-medium text-slate-900">Children’s Music</h3>
-                                <p class="mt-1">Classroom‑friendly songs, lyric sheets, visual kits, and simple videos.</p>
+                                <h3 class="font-medium text-slate-900">Music</h3>
+                                <p class="mt-1">Music that is relatable, Classroom‑friendly songs, lyric sheets, visual kits, and simple videos.</p>
                             </div>
                             <div>
                                 <h3 class="font-medium text-slate-900">Photography</h3>
