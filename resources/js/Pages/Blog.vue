@@ -62,7 +62,7 @@ function clearFilters() {
         <!-- Grid -->
         <section class="pb-12 sm:pb-16">
             <SectionHeading eyebrow="Posts" title="Read & learn" sub="Click any post for more details." />
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <BlogCard v-for="p in filtered" :key="p.slug" :post="p" />
             </div>
             <p v-if="!filtered.length" class="mt-6 text-slate-600">No posts match that search yet.</p>
