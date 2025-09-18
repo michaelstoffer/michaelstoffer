@@ -4,6 +4,7 @@ import AppLayout from '@/Layouts/AppLayout.vue'
 import ButtonLink from '@/Components/ButtonLink.vue'
 import PillarCard from '@/Components/PillarCard.vue'
 import SectionHeading from '@/Components/SectionHeading.vue'
+import BlogCard from "../Components/BlogCard.vue";
 
 const props = defineProps({ latestPosts: { type: Array, default: () => [] } })
 </script>
@@ -65,12 +66,7 @@ const props = defineProps({ latestPosts: { type: Array, default: () => [] } })
         <section class="py-12 sm:py-16">
             <SectionHeading eyebrow="From the Blog" title="Latest writing" sub="Thoughts on building, learning, and shipping." />
             <div v-if="latestPosts.length" class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-                <article v-for="post in latestPosts" :key="post.slug" class="rounded-2xl border border-slate-200 bg-white p-6">
-                    <h3 class="font-semibold text-slate-900"><a :href="`/blog/${post.slug}`" class="hover:underline">{{ post.title }}</a></h3>
-                    <p class="mt-1 text-xs text-slate-500">{{ post.date }}</p>
-                    <p class="mt-2 text-sm text-slate-600">{{ post.excerpt }}</p>
-                    <a :href="`/blog/${post.slug}`" class="mt-3 inline-flex items-center text-sm font-medium hover:underline">Read more</a>
-                </article>
+                <BlogCard v-for="p in latestPosts" :key="p.slug" :post="p" />
             </div>
             <div v-else class="mt-2 text-slate-600">Posts will appear here automatically once wired up.</div>
         </section>
