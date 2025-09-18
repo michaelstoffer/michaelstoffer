@@ -30,19 +30,19 @@ function submit(){
             <form @submit.prevent="submit" class="mt-8 space-y-5">
                 <div>
                     <label class="block text-sm font-medium text-slate-900">Name</label>
-                    <input v-model="form.name" type="text" required class="mt-1 w-full rounded-lg border-slate-300 focus:border-slate-400 focus:ring-0" />
+                    <input v-model="form.name" type="text" required class="mt-1 w-full bg-slate-200 pt-1 pb-1 rounded-lg border-slate-300 focus:border-slate-400 focus:ring-0" />
                     <p v-if="form.errors.name" class="mt-1 text-sm text-red-600">{{ form.errors.name }}</p>
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-slate-900">Email</label>
-                    <input v-model="form.email" type="email" required class="mt-1 w-full rounded-lg border-slate-300 focus:border-slate-400 focus:ring-0" />
+                    <input v-model="form.email" type="email" required class="mt-1 w-full bg-slate-200 pt-1 pb-1 rounded-lg border-slate-300 focus:border-slate-400 focus:ring-0" />
                     <p v-if="form.errors.email" class="mt-1 text-sm text-red-600">{{ form.errors.email }}</p>
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-slate-900">Topic</label>
-                    <select v-model="form.topic" class="mt-1 w-full rounded-lg border-slate-300 focus:border-slate-400 focus:ring-0">
+                    <select v-model="form.topic" class="mt-1 w-full bg-slate-200 pt-1 pb-1 rounded-lg pl-4 border-slate-300 focus:border-slate-400 focus:ring-0">
                         <option value="">Select a topic…</option>
                         <option>Software</option>
                         <option>Music</option>
@@ -53,13 +53,13 @@ function submit(){
 
                 <div>
                     <label class="block text-sm font-medium text-slate-900">Message</label>
-                    <textarea v-model="form.message" required rows="6" class="mt-1 w-full rounded-lg border-slate-300 focus:border-slate-400 focus:ring-0"></textarea>
+                    <textarea v-model="form.message" required rows="6" class="mt-1 w-full bg-slate-200 pt-1 pb-1 rounded-lg border-slate-300 focus:border-slate-400 focus:ring-0"></textarea>
                     <p v-if="form.errors.message" class="mt-1 text-sm text-red-600">{{ form.errors.message }}</p>
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-slate-900">(Optional) Link to brief/spec</label>
-                    <input v-model="form.link" type="url" placeholder="https://…" class="mt-1 w-full rounded-lg border-slate-300 focus:border-slate-400 focus:ring-0" />
+                    <input v-model="form.link" type="url" placeholder="https://…" class="mt-1 w-full bg-slate-200 pt-1 pb-1 pl-4 rounded-lg border-slate-300 focus:border-slate-400 focus:ring-0" />
                     <p v-if="form.errors.link" class="mt-1 text-sm text-red-600">{{ form.errors.link }}</p>
                 </div>
 
