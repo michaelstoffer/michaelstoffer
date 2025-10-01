@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
     <url>
-    <loc>http://localhost:8000</loc>
+    <loc>https://michaelstoffer.com</loc>
             </url>
     <url>
-    <loc>http://localhost:8000/about</loc>
+    <loc>https://michaelstoffer.com/about</loc>
             </url>
     <url>
-    <loc>http://localhost:8000/software</loc>
+    <loc>https://michaelstoffer.com/software</loc>
             </url>
     <url>
-    <loc>http://localhost:8000/music</loc>
+    <loc>https://michaelstoffer.com/music</loc>
             </url>
     <url>
-    <loc>http://localhost:8000/photography</loc>
+    <loc>https://michaelstoffer.com/photography</loc>
             </url>
     <url>
-    <loc>http://localhost:8000/blog</loc>
+    <loc>https://michaelstoffer.com/blog</loc>
             </url>
     <url>
-    <loc>http://localhost:8000/music/axolotl-waddle</loc>
+    <loc>https://michaelstoffer.com/music/beneath-the-weight</loc>
             </url>
     <url>
-    <loc>http://localhost:8000/photography/portraits</loc>
+    <loc>https://michaelstoffer.com/music/splish-splash-bubble-bash</loc>
+            </url>
+    <url>
+    <loc>https://michaelstoffer.com/music/axolotl-waddle</loc>
+            </url>
+    <url>
+    <loc>https://michaelstoffer.com/music/time-to-get-dressed</loc>
+            </url>
+    <url>
+    <loc>https://michaelstoffer.com/photography/portraits</loc>
             </url>
 </urlset>
