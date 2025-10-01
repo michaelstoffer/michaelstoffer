@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Http\Request;
+use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Support\ServiceProvider;
 use Inertia\Inertia;
 
@@ -20,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        RateLimiter::for('contact', static function (Request $request) {
+            return Limit::perMinute(1)->by($request->ip());
+        });
+
         Inertia::share('site', [
             'name' => 'Michael Stoffer',
             'tagline' => "Engineer • Songwriter • Photographer",

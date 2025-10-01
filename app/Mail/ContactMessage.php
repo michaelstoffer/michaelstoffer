@@ -23,6 +23,7 @@ class ContactMessage extends Mailable
 
     public function build()
     {
-        return $this->markdown('mail.contact');
+        return $this->markdown('mail.contact')
+            ->replyTo(data_get($this->data, 'email'), data_get($this->data, 'name'));
     }
 }
