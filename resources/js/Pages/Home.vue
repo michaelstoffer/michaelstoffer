@@ -4,9 +4,10 @@ import AppLayout from '@/Layouts/AppLayout.vue'
 import ButtonLink from '@/Components/ButtonLink.vue'
 import PillarCard from '@/Components/PillarCard.vue'
 import SectionHeading from '@/Components/SectionHeading.vue'
-import BlogCard from "../Components/BlogCard.vue";
+import BlogCard from "@/Components/BlogCard.vue";
+import CaseStudyCard from "@/Components/CaseStudyCard.vue";
 
-const props = defineProps({ latestPosts: { type: Array, default: () => [] } })
+const props = defineProps({ latestPosts: { type: Array, default: () => [] }, caseStudies: { type: Array, default: () => [] }, songs: { type: Array, default: () => [] } })
 </script>
 
 <template>
@@ -53,14 +54,29 @@ const props = defineProps({ latestPosts: { type: Array, default: () => [] } })
             </div>
         </section>
 
-        <!-- FEATURED WORK (placeholders) -->
-        <section class="py-12 sm:py-16">
-            <SectionHeading eyebrow="Featured" title="Recent work" sub="Highlights from software, music, and photography." />
-            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="rounded-2xl border border-slate-200 bg-white p-6 text-slate-600">Case studies coming soon.</div>
-                <div class="rounded-2xl border border-slate-200 bg-white p-6 text-slate-600">Music & photo highlights coming soon.</div>
-            </div>
-        </section>
+        <!-- SOFTWARE -->
+        <div class="mt-12 grid grid-cols-1 gap-6">
+            <section class="">
+                <div class="flex items-end justify-between gap-4">
+                    <div>
+                        <p class="text-xs uppercase tracking-wider text-slate-500">Proof</p>
+                        <h2 class="mt-1 text-2xl sm:text-3xl font-semibold text-slate-900">Recent case studies</h2>
+                        <p class="mt-2 text-slate-600">Problem → approach → result from real projects.</p>
+                    </div>
+                    <a href="/software" class="hidden sm:inline-flex items-center text-sm font-medium text-slate-900 hover:underline">View all</a>
+                </div>
+
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <CaseStudyCard v-for="cs in props.caseStudies" :key="cs.slug"
+                                   :title="cs.title" :summary="cs.summary" :href="`/software/${cs.slug}`"
+                                   :problem="cs.problem" :approach="cs.approach" :result="cs.result" :tags="cs.tags" />
+                </div>
+
+                <div class="mt-8 sm:hidden">
+                    <a href="/software" class="inline-flex items-center text-sm font-medium text-slate-900 hover:underline">View all case studies</a>
+                </div>
+            </section>
+        </div>
 
         <!-- LATEST BLOG -->
         <section class="py-12 sm:py-16">
@@ -71,5 +87,33 @@ const props = defineProps({ latestPosts: { type: Array, default: () => [] } })
             <div v-else class="mt-2 text-slate-600">Posts will appear here automatically once wired up.</div>
         </section>
 
+        <!-- MUSIC -->
+        <section class="py-12 sm:py-16">
+            <div class="flex items-end justify-between gap-4">
+                <div>
+                    <p class="text-xs uppercase tracking-wider text-slate-500">Music</p>
+                    <h2 class="mt-1 text-2xl sm:text-3xl font-semibold text-slate-900">From the studio</h2>
+                    <p class="mt-2 text-slate-600">Short, classroom‑friendly tracks—listen and learn.</p>
+                </div>
+                <a href="/music" class="hidden sm:inline-flex items-center text-sm font-medium text-slate-900 hover:underline">All songs</a>
+            </div>
+
+            <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <article v-for="s in props.songs" :key="s.slug" class="rounded-2xl border border-slate-200 bg-white overflow-hidden">
+                    <a :href="`/music/${s.slug}`" class="block">
+                        <img v-if="s.cover" :src="s.cover" :alt="s.title + ' cover'" class="w-full aspect-square object-cover" loading="lazy" />
+                        <div class="p-5">
+                            <h3 class="text-lg font-semibold text-slate-900">{{ s.title }}</h3>
+                            <p v-if="s.duration" class="mt-1 text-xs text-slate-500">{{ s.duration }}</p>
+                        </div>
+                    </a>
+                    <div v-if="s.audioSrc" class="px-5 pb-5"><audio :src="s.audioSrc" controls class="w-full"></audio></div>
+                </article>
+            </div>
+
+            <div class="mt-8 sm:hidden">
+                <a href="/music" class="inline-flex items-center text-sm font-medium text-slate-900 hover:underline">All songs</a>
+            </div>
+        </section>
     </AppLayout>
 </template>

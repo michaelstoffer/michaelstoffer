@@ -9,7 +9,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
 
-Route::get('/', HomeController::class)->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/software', [SoftwareController::class, 'index'])->name('software');
 Route::get('/software/{slug}', [SoftwareController::class, 'show'])->name('software.show');
 Route::get('/music', [MusicController::class, 'index'])->name('music');

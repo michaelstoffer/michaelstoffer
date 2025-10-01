@@ -7,6 +7,7 @@ use Spatie\Sitemap\Sitemap; use Spatie\Sitemap\Tags\Url;
 use App\Support\PostRepository;
 use App\Support\GalleryRepository;
 use App\Support\MusicRepository;
+use App\Support\CaseStudyRepository;
 
 class GenerateSitemap extends Command
 {
@@ -42,6 +43,11 @@ class GenerateSitemap extends Command
             if (class_exists(GalleryRepository::class)) {
                 foreach (app(GalleryRepository::class)->all() as $g) {
                     $map->add(Url::create('/photography/'.$g['slug']));
+                }
+            }
+            if (class_exists(CaseStudyRepository::class)) {
+                foreach (app(CaseStudyRepository::class)->all() as $cs) {
+                    $map->add(Url::create('/software/'.$cs['slug']));
                 }
             }
         } catch (\Throwable $e) { /* keep sitemap resilient */ }

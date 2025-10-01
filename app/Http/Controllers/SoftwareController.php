@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Inertia\Inertia;
+use App\Support\CaseStudyRepository;
 
 class SoftwareController extends Controller
 {
-    public function index()
+    public function index(CaseStudyRepository $repo)
     {
-        // TODO: Replace with DB or Markdown-backed repository
         $services = [
             ['title' => 'Laravel + Vue Feature Work', 'desc' => 'Practical, well-tested builds with clear handoff.'],
             ['title' => 'Integrations', 'desc' => 'HubSpot, auth flows, webhooks, third-party APIs, and data syncs.'],
@@ -16,22 +16,13 @@ class SoftwareController extends Controller
             ['title' => 'Internal Tools', 'desc' => 'QA tooling, admin panels, queues, job orchestration, CI/CD hygiene.'],
         ];
 
-        $caseStudies = config('case_studies');
-
+        $caseStudies = $repo->all();
         return Inertia::render('Software', compact('services', 'caseStudies'));
     }
 
-    public function show(string $slug)
+    public function show(string $slug, CaseStudyRepository $repo)
     {
-        // TODO: Replace with repository lookup
-        $map = config('case_studies');
-
-        abort_unless($map[$slug]["slug"] === $slug, 404);
-        $cs = $map[$slug];
-
-        return Inertia::render('SoftwareCase', [
-            'slug' => $slug,
-            'case' => $cs,
-        ]);
+        $cs = $repo->find($slug);
+        return Inertia::render('SoftwareCase', ['slug' => $slug, 'case' => $cs]);
     }
 }

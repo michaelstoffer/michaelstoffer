@@ -34,6 +34,7 @@ class MusicRepository
                     'downloads' => $m['downloads'] ?? [],
                     'body' => $doc->body() ?? '',
                     'tags' => $m['tags'] ?? [],
+                    'featured' => (bool)($m['featured'] ?? false),
                 ];
             }
             // stable sort by title

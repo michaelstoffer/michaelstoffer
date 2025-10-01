@@ -35,16 +35,17 @@ class PostRepository
     protected function parse(string $file): array
     {
         $doc = YamlFrontMatter::parseFile($file);
-        $m = $doc->matter();
+        $p = $doc->matter();
         return [
             'slug' => pathinfo($file, PATHINFO_FILENAME),
-            'title' => $m['title'] ?? 'Untitled',
-            'excerpt' => $m['excerpt'] ?? null,
-            'cover' => $m['cover'] ?? null,
-            'published_at' => $m['published_at'] ?? now()->toDateString(),
-            'modified_at' => $m['modified_at'] ?? null,
+            'title' => $p['title'] ?? 'Untitled',
+            'excerpt' => $p['excerpt'] ?? null,
+            'cover' => $p['cover'] ?? null,
+            'published_at' => $p['published_at'] ?? now()->toDateString(),
+            'modified_at' => $p['modified_at'] ?? null,
             'html' => $doc->body(),
-            'tags' => $m['tags'] ?? [],
+            'tags' => $p['tags'] ?? [],
+            'featured' => (bool)($p['featured'] ?? false),
         ];
     }
 }
