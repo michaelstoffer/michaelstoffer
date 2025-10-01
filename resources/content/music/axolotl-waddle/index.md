@@ -3,7 +3,7 @@ slug: axolotl-waddle
 title: The Axolotl Waddle
 subtitle: Movement • Science • Animals
 summary: A playful movement song about our favorite axolotl—great for classrooms and story time.
-description: A succinct, parent/teacher‑facing blurb for the song page and SEO.
+description: A playful movement song about our favorite axolotl—great for classrooms and story time.
 duration: 1:40
 key: G Major
 bpm: 116
@@ -14,7 +14,7 @@ socialImage: /media/music/axolotl-waddle/social.jpg
 downloads:
   - { label: "Lyric Sheet (PDF)", href: "/media/music/axolotl-waddle/lyric-sheet.pdf" }
 #  - { label: "Coloring Page (PDF)", href: "/media/music/axolotl-waddle/coloring-page.pdf" }
-tags: [movement, science, animals]
+tags: [movement, science, animals, childrens]
 ---
 
 ## Lyrics
