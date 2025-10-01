@@ -4,6 +4,9 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Spatie\Sitemap\Sitemap; use Spatie\Sitemap\Tags\Url;
+use App\Support\PostRepository;
+use App\Support\GalleryRepository;
+use App\Support\MusicRepository;
 
 class GenerateSitemap extends Command
 {
@@ -23,19 +26,22 @@ class GenerateSitemap extends Command
 
         // Optional dynamic sections (wire when repos exist)
         try {
-            if (class_exists('App\\Support\\MusicRepository')) {
-                foreach (app('App\\Support\\MusicRepository')->all() as $s) {
+            if (class_exists(PostRepository::class)) {
+                $posts = app(PostRepository::class)->latest(5000);
+                foreach ($posts as $p) {
+                    $map->add(Url::create('/blog/'.$p['slug']));
+                }
+            }
+            if (class_exists(MusicRepository::class)) {
+                //dd('music');
+                $songs = app(MusicRepository::class)->all();
+                foreach ($songs as $s) {
                     $map->add(Url::create('/music/'.$s['slug']));
                 }
             }
-            if (class_exists('App\\Support\\GalleryRepository')) {
-                foreach (app('App\\Support\\GalleryRepository')->all() as $g) {
+            if (class_exists(GalleryRepository::class)) {
+                foreach (app(GalleryRepository::class)->all() as $g) {
                     $map->add(Url::create('/photography/'.$g['slug']));
-                }
-            }
-            if (class_exists('App\Support\PostRepository')) {
-                foreach (app('App\\Support\\PostRepository')->all() as $p) {
-                    $map->add(Url::create('/blog/'.$p['slug']));
                 }
             }
         } catch (\Throwable $e) { /* keep sitemap resilient */ }

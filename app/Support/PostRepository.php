@@ -3,7 +3,6 @@
 // app/Support/PostRepository.php
 namespace App\Support;
 
-use Illuminate\Support\Facades\Cache;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 use League\CommonMark\CommonMarkConverter;
 
