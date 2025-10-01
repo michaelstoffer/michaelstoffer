@@ -2,16 +2,18 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
-use Spatie\Sitemap\Sitemap; use Spatie\Sitemap\Tags\Url;
-use App\Support\PostRepository;
+use App\Support\CaseStudyRepository;
 use App\Support\GalleryRepository;
 use App\Support\MusicRepository;
-use App\Support\CaseStudyRepository;
+use App\Support\PostRepository;
+use Illuminate\Console\Command;
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
 
 class GenerateSitemap extends Command
 {
     protected $signature = 'seo:sitemap';
+
     protected $description = 'Generate sitemap.xml';
 
     public function handle(): int
@@ -34,7 +36,7 @@ class GenerateSitemap extends Command
                 }
             }
             if (class_exists(MusicRepository::class)) {
-                //dd('music');
+                // dd('music');
                 $songs = app(MusicRepository::class)->all();
                 foreach ($songs as $s) {
                     $map->add(Url::create('/music/'.$s['slug']));
@@ -50,10 +52,12 @@ class GenerateSitemap extends Command
                     $map->add(Url::create('/software/'.$cs['slug']));
                 }
             }
-        } catch (\Throwable $e) { /* keep sitemap resilient */ }
+        } catch (\Throwable $e) { /* keep sitemap resilient */
+        }
 
         $map->writeToFile(public_path('sitemap.xml'));
         $this->info('Sitemap generated.');
+
         return self::SUCCESS;
     }
 }

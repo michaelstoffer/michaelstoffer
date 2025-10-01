@@ -13,6 +13,7 @@ class RobotsHeader
         if (! app()->environment('production')) {
             $response->headers->set('X-Robots-Tag', 'noindex, nofollow');
         }
+
         return $response;
     }
 }

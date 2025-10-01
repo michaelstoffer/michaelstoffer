@@ -8,6 +8,7 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 class CaseStudyRepository
 {
     protected string $base;
+
     public function __construct()
     {
         $this->base = resource_path('content/case-studies');
@@ -33,7 +34,8 @@ class CaseStudyRepository
                     'featured' => $m['featured'] ?? false,
                 ];
             }
-            usort($items, fn($a,$b) => strcasecmp($a['title'],$b['title']));
+            usort($items, fn ($a, $b) => strcasecmp($a['title'], $b['title']));
+
             return $items;
         });
     }
@@ -44,6 +46,7 @@ class CaseStudyRepository
             $file = $this->base."/$slug/index.md";
             abort_unless(is_file($file), 404);
             $doc = YamlFrontMatter::parseFile($file);
+
             return array_merge($doc->matter(), ['body' => (string) $doc->body()]);
         });
     }

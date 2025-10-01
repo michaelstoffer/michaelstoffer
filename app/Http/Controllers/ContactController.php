@@ -23,7 +23,7 @@ class ContactController extends Controller
             ->send(new ContactMessage($data));
 
         // Optional: send copy to sender
-        if (!empty($data['email'])) {
+        if (! empty($data['email'])) {
             Mail::to($data['email'])->send(new ContactMessage($data, true));
         }
 

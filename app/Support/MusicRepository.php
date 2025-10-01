@@ -8,6 +8,7 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 class MusicRepository
 {
     protected string $base;
+
     public function __construct()
     {
         $this->base = resource_path('content/music');
@@ -34,11 +35,12 @@ class MusicRepository
                     'downloads' => $m['downloads'] ?? [],
                     'body' => $doc->body() ?? '',
                     'tags' => $m['tags'] ?? [],
-                    'featured' => (bool)($m['featured'] ?? false),
+                    'featured' => (bool) ($m['featured'] ?? false),
                 ];
             }
             // stable sort by title
-            usort($items, fn($a,$b) => strcasecmp($a['title'],$b['title']));
+            usort($items, fn ($a, $b) => strcasecmp($a['title'], $b['title']));
+
             return $items;
         });
     }
@@ -49,6 +51,7 @@ class MusicRepository
             $file = $this->base."/$slug/index.md";
             abort_unless(file_exists($file), 404);
             $doc = YamlFrontMatter::parseFile($file);
+
             return array_merge($doc->matter(), ['body' => $doc->body()]);
         });
     }

@@ -11,6 +11,7 @@ class ContactMessage extends Mailable
     use Queueable, SerializesModels;
 
     public array $data;
+
     public bool $copy;
 
     public function __construct(array $data, bool $copy = false)

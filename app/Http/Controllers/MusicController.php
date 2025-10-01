@@ -17,7 +17,9 @@ class MusicController extends Controller
 
     public function show(string $slug): Response
     {
-        $library = collect(app(MusicRepository::class)->all())->mapWithKeys(function ($item) {return [$item['slug'] => $item];});
+        $library = collect(app(MusicRepository::class)->all())->mapWithKeys(function ($item) {
+            return [$item['slug'] => $item];
+        });
 
         abort_unless($library->has($slug), 404);
 

@@ -1,14 +1,16 @@
 <?php
 
 // app/Support/PostRepository.php
+
 namespace App\Support;
 
-use Spatie\YamlFrontMatter\YamlFrontMatter;
 use League\CommonMark\CommonMarkConverter;
+use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 class PostRepository
 {
     protected string $base;
+
     protected CommonMarkConverter $md;
 
     public function __construct()
@@ -20,8 +22,9 @@ class PostRepository
     public function latest(int $limit = 100): array
     {
         $files = array_reverse(glob($this->base.'/*.md'));
-        $posts = array_map(fn($f) => $this->parse($f), $files);
-        usort($posts, fn($a,$b) => strcmp($b['published_at'], $a['published_at']));
+        $posts = array_map(fn ($f) => $this->parse($f), $files);
+        usort($posts, fn ($a, $b) => strcmp($b['published_at'], $a['published_at']));
+
         return array_slice($posts, 0, $limit);
     }
 
@@ -29,6 +32,7 @@ class PostRepository
     {
         $file = $this->base."/$slug.md";
         abort_unless(file_exists($file), 404);
+
         return $this->parse($file);
     }
 
@@ -36,6 +40,7 @@ class PostRepository
     {
         $doc = YamlFrontMatter::parseFile($file);
         $p = $doc->matter();
+
         return [
             'slug' => pathinfo($file, PATHINFO_FILENAME),
             'title' => $p['title'] ?? 'Untitled',
@@ -45,7 +50,7 @@ class PostRepository
             'modified_at' => $p['modified_at'] ?? null,
             'html' => $doc->body(),
             'tags' => $p['tags'] ?? [],
-            'featured' => (bool)($p['featured'] ?? false),
+            'featured' => (bool) ($p['featured'] ?? false),
         ];
     }
 }

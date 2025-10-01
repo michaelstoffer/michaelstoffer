@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Inertia\Inertia;
 use App\Support\CaseStudyRepository;
+use Inertia\Inertia;
 
 class SoftwareController extends Controller
 {
@@ -17,12 +17,14 @@ class SoftwareController extends Controller
         ];
 
         $caseStudies = $repo->all();
+
         return Inertia::render('Software', compact('services', 'caseStudies'));
     }
 
     public function show(string $slug, CaseStudyRepository $repo)
     {
         $cs = $repo->find($slug);
+
         return Inertia::render('SoftwareCase', ['slug' => $slug, 'case' => $cs]);
     }
 }

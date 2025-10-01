@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\RateLimiter;
-use Illuminate\Http\Request;
 use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Inertia\Inertia;
 
@@ -15,7 +15,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        if ($this->app->environment('local') && class_exists(\Laravel\Telescope\TelescopeServiceProvider::class)) {
+            $this->app->register(\Laravel\Telescope\TelescopeServiceProvider::class);
+            $this->app->register(TelescopeServiceProvider::class);
+        }
     }
 
     /**
@@ -29,8 +32,8 @@ class AppServiceProvider extends ServiceProvider
 
         Inertia::share('site', [
             'name' => 'Michael Stoffer',
-            'tagline' => "Engineer • Songwriter • Photographer",
-            'url'  => config('app.url', 'https://www.michaelstoffer.com'),
+            'tagline' => 'Engineer • Songwriter • Photographer',
+            'url' => config('app.url', 'https://www.michaelstoffer.com'),
             'location' => 'Myrtle Beach, SC',
             'email' => 'mstoffer@michaelstoffer.com',
             'socials' => [
