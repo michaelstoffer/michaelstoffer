@@ -2,8 +2,8 @@
 slug: beneath-the-weight
 title: Beneath the Weight
 subtitle: Emotions • Mental Health
-summary: A soothing song about managing big feelings and finding calm.
-description: A soothing song about managing big feelings and finding calm.
+summary: A song about feeling overwhelmed and finding relief.
+description: A song about feeling overwhelmed and finding relief.
 duration: 4:12
 key: G Major
 bpm: 116
@@ -14,7 +14,8 @@ socialImage: /media/music/beneath-the-weight/social.jpg
 downloads:
 #  - { label: "Lyric Sheet (PDF)", href: "/media/music/beneath-the-weight/lyric-sheet.pdf" }
 #  - { label: "Coloring Page (PDF)", href: "/media/music/beneath-the-weight/coloring-page.pdf" }
-tags: [emotions, mental health]
+tags: [emotions]
+featured: true
 ---
 
 ## Lyrics

@@ -7,7 +7,11 @@ import SectionHeading from '@/Components/SectionHeading.vue'
 import BlogCard from "@/Components/BlogCard.vue";
 import CaseStudyCard from "@/Components/CaseStudyCard.vue";
 
-const props = defineProps({ latestPosts: { type: Array, default: () => [] }, caseStudies: { type: Array, default: () => [] }, songs: { type: Array, default: () => [] } })
+const props = defineProps({
+    latestPosts: { type: Array, default: () => [] },
+    caseStudies: { type: Array, default: () => [] },
+    songs: { type: Array, default: () => [] }
+})
 </script>
 
 <template>
@@ -93,7 +97,7 @@ const props = defineProps({ latestPosts: { type: Array, default: () => [] }, cas
                 <div>
                     <p class="text-xs uppercase tracking-wider text-slate-500">Music</p>
                     <h2 class="mt-1 text-2xl sm:text-3xl font-semibold text-slate-900">From the studio</h2>
-                    <p class="mt-2 text-slate-600">Short, classroom‑friendly tracks—listen and learn.</p>
+                    <p class="mt-2 text-slate-600">Music from the heart, written by yours truly.</p>
                 </div>
                 <a href="/music" class="hidden sm:inline-flex items-center text-sm font-medium text-slate-900 hover:underline">All songs</a>
             </div>
@@ -105,6 +109,7 @@ const props = defineProps({ latestPosts: { type: Array, default: () => [] }, cas
                         <div class="p-5">
                             <h3 class="text-lg font-semibold text-slate-900">{{ s.title }}</h3>
                             <p v-if="s.duration" class="mt-1 text-xs text-slate-500">{{ s.duration }}</p>
+                            <p class="mt-2 text-slate-600 line-clamp-3">{{ s.summary }}</p>
                         </div>
                     </a>
                     <div v-if="s.audioSrc" class="px-5 pb-5"><audio :src="s.audioSrc" controls class="w-full"></audio></div>

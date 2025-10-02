@@ -14,7 +14,7 @@ socialImage: /media/music/splish-splash-bubble-bash/social.jpg
 downloads:
   - { label: "Lyric Sheet (PDF)", href: "/media/music/splish-splash-bubble-bash/lyric-sheet.pdf" }
 #  - { label: "Coloring Page (PDF)", href: "/media/music/splish-splash-bubble-bash/coloring-page.pdf" }
-tags: [counting, daily routines, childrens]
+tags: [counting, childrens]
 ---
 
 ## Lyrics
