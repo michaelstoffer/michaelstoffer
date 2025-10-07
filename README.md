@@ -4,12 +4,12 @@
 [![Website](https://img.shields.io/website?label=michaelstoffer.com&style=for-the-badge&url=https%3A%2F%2Fmichaelstoffer.com)](https://www.michaelstoffer.com)
 [![Twitter Follow](https://img.shields.io/twitter/follow/michaelstoffer?color=1DA1F2&logo=twitter&style=for-the-badge)](https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fgithub.com%2Fmichaelstoffer&screen_name=michaelstoffer)
 
-## I'm a Single Father, Software Developer, and Photographer!
+## Laravel + Vue craftsman—shipping clean, resilient apps.
 
-- 🌱 I’m infatuated with iOS Development at the moment 📱
-- 👯 I’m looking to collaborate with other content creators
-- 🥅 2025 Goals: Build an Open Source project
-- ⚡ Fun fact: I love Landscape and Nature Photography
+- 🌱 Engineer, photographer, and music maker — shipping with care�
+- 👯 Code by day, cameras & chords by night.
+- 🥅 Where product thinking meets pixel polish.
+- ⚡ Web apps, good docs, better vibes.
 
 ### Connect with me:
 
