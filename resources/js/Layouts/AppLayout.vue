@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { Link } from '@inertiajs/vue3'
 import GlobalSchema from '@/Components/GlobalSchema.vue'
+import MobileMenuButton from "../Components/MobileMenuButton.vue";
 
 // Optional site-wide props (location, email, social)
 const props = defineProps({
@@ -46,10 +47,7 @@ const nav = [
                     <Link v-for="item in nav" :key="item.name" :href="item.href" class="text-slate-700 hover:text-slate-900">{{ item.name }}</Link>
                 </nav>
 
-                <button @click="mobileOpen = !mobileOpen" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-300">
-                    <span class="sr-only">Toggle menu</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-                </button>
+                <MobileMenuButton :open="mobileOpen" @toggle="mobileOpen = !mobileOpen" />
             </div>
 
             <!-- Mobile menu -->
