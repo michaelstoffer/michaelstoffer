@@ -10,6 +10,9 @@ photos:
   - { src: "/media/photography/nature/p4.jpg", alt: "Beautiful blue flower", w: 2000, h: 1333, orientation: landscape, tags: [outdoor], camera: "Nikon D7500", lens: "200mm", location: "Outdoor", date: 2025-02-12 }
   - { src: "/media/photography/nature/p5.jpg", alt: "Purple flower", w: 2000, h: 1333, orientation: landscape, tags: [outdoor], camera: "Nikon D7500", lens: "200mm", location: "Outdoor", date: 2025-02-12 }
   - { src: "/media/photography/nature/p6.jpg", alt: "Pink flower", w: 2000, h: 1333, orientation: landscape, tags: [outdoor], camera: "Nikon D7500", lens: "200mm", location: "Outdoor", date: 2025-02-12 }
+  - { src: "/media/photography/nature/p7.jpg", alt: "Butterfly landing on flower", w: 2000, h: 1333, orientation: landscape, tags: [outdoor], camera: "Nikon D7500", lens: "200mm", location: "Outdoor", date: 2025-02-12 }
+  - { src: "/media/photography/nature/p8.jpg", alt: "Orange flower", w: 2000, h: 1333, orientation: landscape, tags: [outdoor], camera: "Nikon D7500", lens: "200mm", location: "Outdoor", date: 2025-02-12 }
+  - { src: "/media/photography/nature/p9.jpg", alt: "White flower", w: 2000, h: 1333, orientation: landscape, tags: [outdoor], camera: "Nikon D7500", lens: "200mm", location: "Outdoor", date: 2025-02-12 }
 ---
 
 (Optional narrative about the gallery.)
