@@ -6,11 +6,13 @@ import PillarCard from '@/Components/PillarCard.vue'
 import SectionHeading from '@/Components/SectionHeading.vue'
 import BlogCard from "@/Components/BlogCard.vue";
 import CaseStudyCard from "@/Components/CaseStudyCard.vue";
+import LookingBack from "../Components/LookingBack.vue";
 
 const props = defineProps({
     latestPosts: { type: Array, default: () => [] },
     caseStudies: { type: Array, default: () => [] },
-    songs: { type: Array, default: () => [] }
+    songs: { type: Array, default: () => [] },
+    amr: { type: String, default: () => '' }
 })
 </script>
 
@@ -120,5 +122,7 @@ const props = defineProps({
                 <a href="/music" class="inline-flex items-center text-sm font-medium text-slate-900 hover:underline">All songs</a>
             </div>
         </section>
+
+        <looking-back v-if="amr"  :amr="amr" />
     </AppLayout>
 </template>

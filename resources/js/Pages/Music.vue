@@ -4,11 +4,14 @@ import AppLayout from '@/Layouts/AppLayout.vue'
 import SectionHeading from '@/Components/SectionHeading.vue'
 import SongCard from '@/Components/SongCard.vue'
 import { computed, ref } from 'vue'
+import LookingBack from "../Components/LookingBack.vue";
 
-const props = defineProps({ songs: { type: Array, default: () => [] } })
+const props = defineProps({ songs: { type: Array, default: () => [] }, amr: { type: String, default: () => '' } })
 
 const q = ref('')
 const activeTag = ref('')
+
+console.log('AMR', props.amr)
 
 const allTags = computed(() => {
     const set = new Set()
@@ -67,5 +70,7 @@ function clearFilters() {
             </div>
             <p v-if="!filtered.length" class="mt-6 text-slate-600">No songs match that search yet.</p>
         </section>
+
+        <looking-back v-if="amr"  :amr="amr" />
     </AppLayout>
 </template>

@@ -12,7 +12,10 @@ class MusicController extends Controller
     {
         $songs = app(MusicRepository::class)->all();
 
-        return Inertia::render('Music', compact('songs'));
+        return Inertia::render('Music', [
+            ...compact('songs'),
+            'amr' => '/media/music/apple_music_replay_25.mp4'
+        ]);
     }
 
     public function show(string $slug): Response

@@ -47,6 +47,7 @@ class HomeController extends Controller
             'caseStudies' => $caseStudies,
             'songs' => $songs,
             'latestPosts' => $latestPosts,
+            'amr' => '/media/music/apple_music_replay_25.mp4'
         ]);
     }
 }
