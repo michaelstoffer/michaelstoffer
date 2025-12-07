@@ -1,4 +1,6 @@
 <script setup>
+import SectionHeading from '@/Components/SectionHeading.vue'
+
 const props = defineProps({ amr: { type: String, default: () => '' } })
 </script>
 <template>
