@@ -14,7 +14,7 @@ socialImage: /media/music/still-moving/social.jpg
 downloads:
 #  - { label: "Lyric Sheet (PDF)", href: "/media/music/still-moving/lyric-sheet.pdf" }
 #  - { label: "Coloring Page (PDF)", href: "/media/music/still-moving/coloring-page.pdf" }
-tags: [movement]
+tags: [pop]
 ---
 
 ## Lyrics

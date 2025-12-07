@@ -14,7 +14,7 @@ socialImage: /media/music/time-to-get-dressed/social.jpg
 downloads:
   - { label: "Lyric Sheet (PDF)", href: "/media/music/time-to-get-dressed/lyric-sheet.pdf" }
 #  - { label: "Coloring Page (PDF)", href: "/media/music/time-to-get-dressed/coloring-page.pdf" }
-tags: [movement, childrens]
+tags: [childrens]
 ---
 
 ## Lyrics

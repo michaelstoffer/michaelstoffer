@@ -14,7 +14,7 @@ socialImage: /media/music/axolotl-waddle/social.jpg
 downloads:
   - { label: "Lyric Sheet (PDF)", href: "/media/music/axolotl-waddle/lyric-sheet.pdf" }
 #  - { label: "Coloring Page (PDF)", href: "/media/music/axolotl-waddle/coloring-page.pdf" }
-tags: [movement, childrens]
+tags: [childrens]
 ---
 
 ## Lyrics
