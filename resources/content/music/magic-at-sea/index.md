@@ -14,7 +14,7 @@ socialImage: /media/music/magic-at-sea/social.jpg
 downloads:
 #  - { label: "Lyric Sheet (PDF)", href: "/media/music/magic-at-sea/lyric-sheet.pdf" }
 #  - { label: "Coloring Page (PDF)", href: "/media/music/magic-at-sea/coloring-page.pdf" }
-tags: [love]
+tags: [country]
 ---
 
 ## Lyrics

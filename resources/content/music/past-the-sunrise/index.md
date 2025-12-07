@@ -14,7 +14,7 @@ socialImage: /media/music/past-the-sunrise/social.jpg
 downloads:
 #  - { label: "Lyric Sheet (PDF)", href: "/media/music/past-the-sunrise/lyric-sheet.pdf" }
 #  - { label: "Coloring Page (PDF)", href: "/media/music/past-the-sunrise/coloring-page.pdf" }
-tags: [love]
+tags: [country]
 ---
 
 ## Lyrics

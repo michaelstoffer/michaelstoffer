@@ -14,7 +14,7 @@ socialImage: /media/music/swiped-right-into-forever/social.jpg
 downloads:
 #  - { label: "Lyric Sheet (PDF)", href: "/media/music/swiped-right-into-forever/lyric-sheet.pdf" }
 #  - { label: "Coloring Page (PDF)", href: "/media/music/swiped-right-into-forever/coloring-page.pdf" }
-tags: [love]
+tags: [country]
 ---
 
 ## Lyrics

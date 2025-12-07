@@ -14,7 +14,7 @@ socialImage: /media/music/daddys-hand/social.jpg
 downloads:
 #  - { label: "Lyric Sheet (PDF)", href: "/media/music/daddys-hand/lyric-sheet.pdf" }
 #  - { label: "Coloring Page (PDF)", href: "/media/music/daddys-hand/coloring-page.pdf" }
-tags: [love]
+tags: [country]
 ---
 
 ## Lyrics

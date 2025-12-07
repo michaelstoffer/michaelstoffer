@@ -14,7 +14,7 @@ socialImage: /media/music/last-smoke-on-a-sunday/social.jpg
 downloads:
 #  - { label: "Lyric Sheet (PDF)", href: "/media/music/last-smoke-on-a-sunday/lyric-sheet.pdf" }
 #  - { label: "Coloring Page (PDF)", href: "/media/music/last-smoke-on-a-sunday/coloring-page.pdf" }
-tags: [emotions]
+tags: [country]
 featured: true
 ---
 

@@ -14,7 +14,7 @@ socialImage: /media/music/in-the-loop/social.jpg
 downloads:
 #  - { label: "Lyric Sheet (PDF)", href: "/media/music/in-the-loop/lyric-sheet.pdf" }
 #  - { label: "Coloring Page (PDF)", href: "/media/music/in-the-loop/coloring-page.pdf" }
-tags: [technology]
+tags: [pop]
 ---
 
 ## Lyrics

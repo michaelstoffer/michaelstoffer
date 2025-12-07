@@ -14,7 +14,7 @@ socialImage: /media/music/bell-rings-free/social.jpg
 downloads:
 #  - { label: "Lyric Sheet (PDF)", href: "/media/music/bell-rings-free/lyric-sheet.pdf" }
 #  - { label: "Coloring Page (PDF)", href: "/media/music/bell-rings-free/coloring-page.pdf" }
-tags: [emotions]
+tags: [pop]
 ---
 
 ## Lyrics

@@ -14,7 +14,7 @@ socialImage: /media/music/you-and-me-were-everything/social.jpg
 downloads:
 #  - { label: "Lyric Sheet (PDF)", href: "/media/music/you-and-me-were-everything/lyric-sheet.pdf" }
 #  - { label: "Coloring Page (PDF)", href: "/media/music/you-and-me-were-everything/coloring-page.pdf" }
-tags: [love]
+tags: [pop]
 ---
 
 ## Lyrics

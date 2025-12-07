@@ -14,7 +14,7 @@ socialImage: /media/music/no-ceiling/social.jpg
 downloads:
 #  - { label: "Lyric Sheet (PDF)", href: "/media/music/no-ceiling/lyric-sheet.pdf" }
 #  - { label: "Coloring Page (PDF)", href: "/media/music/no-ceiling/coloring-page.pdf" }
-tags: [emotions]
+tags: [hip-hop]
 featured: true
 ---
 

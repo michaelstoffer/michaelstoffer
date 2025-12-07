@@ -14,7 +14,7 @@ socialImage: /media/music/electric-heart/social.jpg
 downloads:
 #  - { label: "Lyric Sheet (PDF)", href: "/media/music/electric-heart/lyric-sheet.pdf" }
 #  - { label: "Coloring Page (PDF)", href: "/media/music/electric-heart/coloring-page.pdf" }
-tags: [love]
+tags: [pop]
 ---
 
 ## Lyrics

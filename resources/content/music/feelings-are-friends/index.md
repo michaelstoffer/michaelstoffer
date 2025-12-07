@@ -14,7 +14,7 @@ socialImage: /media/music/feelings-are-friends/social.jpg
 downloads:
 #  - { label: "Lyric Sheet (PDF)", href: "/media/music/feelings-are-friends/lyric-sheet.pdf" }
 #  - { label: "Coloring Page (PDF)", href: "/media/music/feelings-are-friends/coloring-page.pdf" }
-tags: [emotions]
+tags: [pop]
 ---
 
 ## Lyrics
