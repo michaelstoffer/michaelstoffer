@@ -1,10 +1,10 @@
 <script setup>
-import SeoHead from '@/Components/SeoHead.vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
+import LookingBack from "@/Components/LookingBack.vue";
 import SectionHeading from '@/Components/SectionHeading.vue'
+import SeoHead from '@/Components/SeoHead.vue'
 import SongCard from '@/Components/SongCard.vue'
 import { computed, ref } from 'vue'
-import LookingBack from "../Components/LookingBack.vue";
 
 const props = defineProps({ songs: { type: Array, default: () => [] }, amr: { type: String, default: () => '' } })
 
