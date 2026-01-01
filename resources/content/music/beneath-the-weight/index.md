@@ -15,7 +15,6 @@ downloads:
 #  - { label: "Lyric Sheet (PDF)", href: "/media/music/beneath-the-weight/lyric-sheet.pdf" }
 #  - { label: "Coloring Page (PDF)", href: "/media/music/beneath-the-weight/coloring-page.pdf" }
 tags: [r&b]
-featured: true
 ---
 
 ## Lyrics
