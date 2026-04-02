@@ -9,6 +9,21 @@ const props = defineProps({
     services: { type: Array, default: () => [] },
     caseStudies: { type: Array, default: () => [] },
 })
+
+const stack = [
+    { name: 'PHP 8.4', category: 'Language' },
+    { name: 'Laravel', category: 'Framework' },
+    { name: 'Vue 3', category: 'Frontend' },
+    { name: 'Inertia.js', category: 'Frontend' },
+    { name: 'Tailwind CSS', category: 'Frontend' },
+    { name: 'MySQL', category: 'Database' },
+    { name: 'Redis', category: 'Cache / Queue' },
+    { name: 'Pest / PHPUnit', category: 'Testing' },
+    { name: 'Filament', category: 'Admin' },
+    { name: 'Vite', category: 'Build' },
+    { name: 'Git / GitHub', category: 'Version Control' },
+    { name: 'REST APIs & Webhooks', category: 'Integrations' },
+]
 </script>
 
 <template>
@@ -19,7 +34,7 @@ const props = defineProps({
         <section class="pt-12 sm:pt-16 pb-8">
             <div class="max-w-3xl">
                 <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">Software Engineering</h1>
-                <p class="mt-4 text-lg text-slate-700">I build practical Laravel/Vue features, integrations, and internal tools with a clean, traditional approach—ship it, document it, and keep it easy to maintain.</p>
+                <p class="mt-4 text-lg text-slate-700">I build practical, well-tested Laravel and Vue applications—feature work, third-party integrations, internal tooling, and reporting pipelines. I care about clean handoffs, readable code, and systems that are easy for the next developer to pick up.</p>
             </div>
         </section>
 
@@ -45,21 +60,32 @@ const props = defineProps({
             </div>
         </section>
 
-        <!-- FAQ (optional) -->
+        <!-- Tech Stack -->
         <section class="py-12">
-            <SectionHeading eyebrow="Process" title="How I work" />
+            <SectionHeading eyebrow="Stack" title="Technologies I work with" sub="The tools I reach for day-to-day." />
+            <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                <div v-for="tech in stack" :key="tech.name" class="rounded-xl border border-slate-200 bg-white px-4 py-3">
+                    <div class="text-sm font-medium text-slate-900">{{ tech.name }}</div>
+                    <div class="mt-0.5 text-xs text-slate-500">{{ tech.category }}</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How I work -->
+        <section class="py-12">
+            <SectionHeading eyebrow="Process" title="How I work" sub="What it's actually like to build with me." />
             <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-700">
                 <div>
                     <h3 class="font-medium text-slate-900">Simple scopes</h3>
-                    <p class="mt-2">Small milestones, written acceptance criteria, and a done‑means‑done checklist.</p>
+                    <p class="mt-2">Small milestones, written acceptance criteria, and a done‑means‑done checklist. No ambiguity about what ships.</p>
                 </div>
                 <div>
                     <h3 class="font-medium text-slate-900">Tested & observable</h3>
-                    <p class="mt-2">Coverage where it counts, queue visibility, and a clean error inbox.</p>
+                    <p class="mt-2">Feature and unit tests where they count, queue visibility, and a clean error inbox. I write code I'd want to maintain.</p>
                 </div>
                 <div>
                     <h3 class="font-medium text-slate-900">Handoffs that stick</h3>
-                    <p class="mt-2">Docs, admin notes, and a tidy backlog for the next dev.</p>
+                    <p class="mt-2">Inline docs, admin notes, and a tidy backlog so the next developer—or future me—isn't starting from scratch.</p>
                 </div>
             </div>
         </section>
