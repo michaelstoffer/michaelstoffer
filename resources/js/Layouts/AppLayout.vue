@@ -11,7 +11,7 @@ const props = defineProps({
         default: () => ({
             name: 'Michael Stoffer',
             tagline: "Engineer • Songwriter • Photographer",
-            location: 'Myrtle Beach, SC',
+            location: 'Orlando, FL',
             email: 'mstoffer@michaelstoffer.com',
             socials: { x: 'https://x.com/michaelstoffer', github: 'https://github.com/michaelstoffer', linkedin: 'https://www.linkedin.com/in/michaelstoffer/' }
         })
