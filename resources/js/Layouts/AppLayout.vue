@@ -1,6 +1,6 @@
 <script setup>
-import { ref } from 'vue'
-import { Link } from '@inertiajs/vue3'
+import { ref, computed } from 'vue'
+import { Link, usePage } from '@inertiajs/vue3'
 import GlobalSchema from '@/Components/GlobalSchema.vue'
 import MobileMenuButton from "../Components/MobileMenuButton.vue";
 
@@ -19,6 +19,7 @@ const props = defineProps({
 })
 
 const mobileOpen = ref(false)
+const currentUrl = computed(() => usePage().url)
 const nav = [
     { name: 'Software', href: '/software' },
     { name: "Music", href: '/music' },
@@ -44,7 +45,10 @@ const nav = [
                 </div>
 
                 <nav class="hidden md:flex items-center gap-6 text-sm">
-                    <Link v-for="item in nav" :key="item.name" :href="item.href" class="text-slate-700 hover:text-slate-900">{{ item.name }}</Link>
+                    <Link v-for="item in nav" :key="item.name" :href="item.href"
+                        :class="currentUrl.startsWith(item.href) ? 'text-amber-600 font-medium' : 'text-slate-700 hover:text-amber-600'">
+                        {{ item.name }}
+                    </Link>
                 </nav>
 
                 <MobileMenuButton :open="mobileOpen" @toggle="mobileOpen = !mobileOpen" />
@@ -53,7 +57,10 @@ const nav = [
             <!-- Mobile menu -->
             <div v-show="mobileOpen" class="md:hidden border-t border-slate-200">
                 <div class="px-4 py-3 space-y-2">
-                    <Link v-for="item in nav" :key="item.name" :href="item.href" class="block px-2 py-2 rounded hover:bg-slate-100">{{ item.name }}</Link>
+                    <Link v-for="item in nav" :key="item.name" :href="item.href"
+                        :class="currentUrl.startsWith(item.href) ? 'block px-2 py-2 rounded text-amber-600 font-medium bg-amber-50' : 'block px-2 py-2 rounded text-slate-700 hover:bg-slate-100'">
+                        {{ item.name }}
+                    </Link>
                 </div>
             </div>
         </header>
@@ -64,7 +71,7 @@ const nav = [
         </main>
 
         <!-- Footer -->
-        <footer class="mt-24 border-t border-slate-200/70">
+        <footer class="mt-12 border-t border-slate-200/70">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 text-sm text-slate-500 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div>
                     <p class="font-medium text-slate-700">{{ site.name }}</p>
@@ -72,12 +79,12 @@ const nav = [
                     <p class="mt-1">Based in <span class="font-medium">{{ site.location }}</span></p>
                 </div>
                 <nav class="flex flex-wrap gap-4">
-                    <Link href="/contact" class="hover:text-slate-700">Contact</Link>
-                    <Link href="/about" class="hover:text-slate-700">About</Link>
-                    <Link href="/blog" class="hover:text-slate-700">Blog</Link>
-                    <a v-if="site.socials.github" :href="site.socials.github" class="hover:text-slate-700" target="_blank" rel="noreferrer">GitHub</a>
-                    <a v-if="site.socials.linkedin" :href="site.socials.linkedin" class="hover:text-slate-700" target="_blank" rel="noreferrer">LinkedIn</a>
-                    <a v-if="site.socials.x" :href="site.socials.x" class="hover:text-slate-700" target="_blank" rel="noreferrer">X</a>
+                    <Link href="/contact" :class="currentUrl.startsWith('/contact') ? 'text-amber-600 font-medium' : 'text-slate-700 hover:text-amber-600'">Contact</Link>
+                    <Link href="/about" :class="currentUrl.startsWith('/about') ? 'text-amber-600 font-medium' : 'text-slate-700 hover:text-amber-600'">About</Link>
+                    <Link href="/blog" :class="currentUrl.startsWith('/blog') ? 'text-amber-600 font-medium' : 'text-slate-700 hover:text-amber-600'">Blog</Link>
+                    <a v-if="site.socials.github" :href="site.socials.github" class="text-slate-700 hover:text-amber-600" target="_blank" rel="noreferrer">GitHub</a>
+                    <a v-if="site.socials.linkedin" :href="site.socials.linkedin" class="text-slate-700 hover:text-amber-600" target="_blank" rel="noreferrer">LinkedIn</a>
+                    <a v-if="site.socials.x" :href="site.socials.x" class="text-slate-700 hover:text-amber-600" target="_blank" rel="noreferrer">X</a>
                 </nav>
             </div>
         </footer>

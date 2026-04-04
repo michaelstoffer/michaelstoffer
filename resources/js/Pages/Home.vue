@@ -23,7 +23,7 @@ const props = defineProps({
         <!-- HERO -->
         <section class="pt-16 sm:pt-20 pb-12 sm:pb-16">
             <div class="max-w-3xl">
-                <h1 class="text-3xl sm:text-5xl font-semibold tracking-tight text-slate-900">
+                <h1 class="text-3xl sm:text-5xl font-semibold tracking-tight bg-linear-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
                     Engineer, songwriter, photographer—
                     <span class="whitespace-nowrap">building things that last.</span>
                 </h1>
@@ -63,16 +63,8 @@ const props = defineProps({
         <!-- SOFTWARE -->
         <div class="mt-12 grid grid-cols-1 gap-6">
             <section class="">
-                <div class="flex items-end justify-between gap-4">
-                    <div>
-                        <p class="text-xs uppercase tracking-wider text-slate-500">Proof</p>
-                        <h2 class="mt-1 text-2xl sm:text-3xl font-semibold text-slate-900">Recent case studies</h2>
-                        <p class="mt-2 text-slate-600">Problem → approach → result from real projects.</p>
-                    </div>
-                    <a href="/software" class="hidden sm:inline-flex items-center text-sm font-medium text-slate-900 hover:underline">View all</a>
-                </div>
-
-                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <SectionHeading eyebrow="Proof" title="Recent case studies" sub="Problem → approach → result from real projects." linkHref="/software" linkText="All case studies" />
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <CaseStudyCard v-for="cs in props.caseStudies" :key="cs.slug"
                                    :title="cs.title" :summary="cs.summary" :href="`/software/${cs.slug}`"
                                    :cover="cs.cover" :problem="cs.problem" :approach="cs.approach" :result="cs.result" :tags="cs.tags" />
@@ -86,24 +78,20 @@ const props = defineProps({
 
         <!-- LATEST BLOG -->
         <section class="py-12 sm:py-16">
-            <SectionHeading eyebrow="From the Blog" title="Latest writing" sub="Thoughts on building, learning, and shipping." />
+            <SectionHeading eyebrow="From the Blog" title="Latest writing" sub="Thoughts on building, learning, and shipping.", linkHref="/blog" linkText="All posts" />
             <div v-if="latestPosts.length" class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
                 <BlogCard v-for="p in latestPosts" :key="p.slug" :post="p" />
             </div>
             <div v-else class="mt-2 text-slate-600">Posts will appear here automatically once wired up.</div>
+
+            <div class="mt-8 sm:hidden">
+                <a href="/blog" class="inline-flex items-center text-sm font-medium text-slate-900 hover:underline">View all blog posts</a>
+            </div>
         </section>
 
         <!-- MUSIC -->
         <section class="py-12 sm:py-16">
-            <div class="flex items-end justify-between gap-4">
-                <div>
-                    <p class="text-xs uppercase tracking-wider text-slate-500">Music</p>
-                    <h2 class="mt-1 text-2xl sm:text-3xl font-semibold text-slate-900">From the studio</h2>
-                    <p class="mt-2 text-slate-600">Music from the heart, written by yours truly.</p>
-                </div>
-                <a href="/music" class="hidden sm:inline-flex items-center text-sm font-medium text-slate-900 hover:underline">All songs</a>
-            </div>
-
+            <SectionHeading eyebrow="Music" title="From the studio" sub="Music from the heart, written by yours truly." linkHref="/music" linkText="All songs" />
             <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <article v-for="s in props.songs" :key="s.slug" class="rounded-2xl border border-slate-200 bg-white overflow-hidden">
                     <a :href="`/music/${s.slug}`" class="block">
@@ -119,7 +107,7 @@ const props = defineProps({
             </div>
 
             <div class="mt-8 sm:hidden">
-                <a href="/music" class="inline-flex items-center text-sm font-medium text-slate-900 hover:underline">All songs</a>
+                <a href="/music" class="inline-flex items-center text-sm font-medium text-slate-900 hover:underline">View all songs</a>
             </div>
         </section>
 
