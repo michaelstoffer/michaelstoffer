@@ -1,6 +1,6 @@
 ---
 title: Building a Multi-Location Web Platform That Scales
-summary: How I designed and built a custom Laravel CMS that manages 300+ location websites from a single login — replacing a fragile WordPress Multisite setup with something the team actually wants to use.
+summary: How I helped design and build a custom Laravel CMS that manages 300+ location websites from a single login — replacing a fragile WordPress Multisite setup with something the team actually wants to use.
 problem: "Decentralized systems led to inefficiencies and errors."
 approach: "Unified platform with role-based access, real-time updates, and audit trails."
 result: "Improved operational efficiency and data accuracy."
@@ -21,7 +21,7 @@ Managing websites across dozens — or hundreds — of locations is a problem mo
 
 For a growing multi-location business network, the answer was a custom-built platform designed from the ground up to handle scale without the chaos.
 
-I architected and built a multi-location web platform that lets a single administrative team manage over 300 individual websites from one login — with full control over content, branding, and location-specific details, without touching code.
+I helped architect and build a multi-location web platform that lets a single administrative team manage over 300 individual websites from one login — with full control over content, branding, and location-specific details, without touching code.
 
 ---
 
