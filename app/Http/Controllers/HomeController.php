@@ -21,6 +21,7 @@ class HomeController extends Controller
             'slug' => $cs['slug'],
             'title' => $cs['title'],
             'summary' => $cs['summary'] ?? $cs['result'] ?? '',
+            'cover' => $cs['cover'] ?? null,
             'problem' => $cs['problem'] ?? null,
             'approach' => $cs['approach'] ?? null,
             'result' => $cs['result'] ?? null,

@@ -75,7 +75,7 @@ const props = defineProps({
                 <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <CaseStudyCard v-for="cs in props.caseStudies" :key="cs.slug"
                                    :title="cs.title" :summary="cs.summary" :href="`/software/${cs.slug}`"
-                                   :problem="cs.problem" :approach="cs.approach" :result="cs.result" :tags="cs.tags" />
+                                   :cover="cs.cover" :problem="cs.problem" :approach="cs.approach" :result="cs.result" :tags="cs.tags" />
                 </div>
 
                 <div class="mt-8 sm:hidden">

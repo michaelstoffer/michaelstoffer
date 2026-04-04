@@ -1,10 +1,16 @@
 <script setup>
 import SeoHead from '@/Components/SeoHead.vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
+import { computed } from 'vue'
+import { marked } from 'marked'
 
 const props = defineProps({
     slug: { type: String },
     case: { type: Object },
+})
+
+const renderedBody = computed(() => {
+    return props.case.body ? marked.parse(props.case.body) : ''
 })
 </script>
 
@@ -13,6 +19,7 @@ const props = defineProps({
         <SeoHead :title="`${props.case.study} - Case Study`" :description="props.case.summary || props.case.result" :url="`https://www.michaelstoffer.com/software/${slug}`" />
 
         <section class="pt-12 sm:pt-16 pb-8 max-w-3xl">
+            <img v-if="props.case.cover" :src="props.case.cover" :alt="`${props.case.title} cover`" class="w-full rounded-2xl border border-slate-200 aspect-video object-cover mb-8" loading="lazy" />
             <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">{{ props.case.title }}</h1>
             <p class="mt-3 text-slate-700">{{ props.case.result }}</p>
 
@@ -51,6 +58,29 @@ const props = defineProps({
                     <li v-for="l in props.case.links" :key="l.href"><a :href="l.href" class="hover:underline">{{ l.label || l.href }}</a></li>
                 </ul>
             </div>
+
+            <div v-if="renderedBody" class="prose prose-slate mt-10 max-w-none post-content" v-html="renderedBody"></div>
         </section>
     </AppLayout>
 </template>
+
+<style lang="scss" scoped>
+.post-content {
+    :deep(p) { margin-top: 1em; margin-bottom: 1em; }
+    :deep(h2) { font-size: 1.5em; margin-top: 0.83em; margin-bottom: 0.83em; font-weight: bold; }
+    :deep(h3) { font-size: 1.25em; margin-top: 1em; margin-bottom: 1em; font-weight: bold; }
+    :deep(h4) { font-size: 1em; margin-top: 1.33em; margin-bottom: 1.33em; font-weight: bold; }
+    :deep(ul) { list-style-type: disc; padding-left: 1.5em; margin-top: 1em; margin-bottom: 1em; }
+    :deep(ol) { list-style-type: decimal; padding-left: 1.5em; margin-top: 1em; margin-bottom: 1em; }
+    :deep(pre) { background-color: #333; color: #fff; padding: 1em; border-radius: 0.5em; overflow-x: auto; margin-top: 1em; margin-bottom: 1em; }
+    :deep(code) { background-color: #333; color: #fff; padding: 0.2em 0.4em; border-radius: 0.25em; }
+    :deep(a) { color: #1e40af; text-decoration: underline; }
+    :deep(a:hover) { color: #1e3a8a; }
+    :deep(blockquote) { border-left: 4px solid #d1d5db; padding-left: 1em; color: #6b7280; margin-top: 1em; margin-bottom: 1em; }
+    :deep(img) { max-width: 100%; height: auto; margin-top: 1em; margin-bottom: 1em; }
+    :deep(table) { width: 100%; border-collapse: collapse; margin-top: 1em; margin-bottom: 1em; }
+    :deep(th), :deep(td) { border: 1px solid #d1d5db; padding: 0.5em; text-align: left; }
+    :deep(th) { background-color: #f9fafb; }
+    :deep(hr) { border: none; border-top: 1px solid #e5e7eb; margin: 2em 0; }
+}
+</style>

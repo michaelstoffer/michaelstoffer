@@ -4,6 +4,7 @@ const props = defineProps({
     title: String,
     summary: String,
     href: String,
+    cover: { type: String, default: null },
     problem: String,
     approach: String,
     result: String,
@@ -11,7 +12,11 @@ const props = defineProps({
 })
 </script>
 <template>
-    <div class="rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-lg transition-shadow">
+    <div class="rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg transition-shadow">
+        <a v-if="cover" :href="href" class="block">
+            <img :src="cover" :alt="`${title} cover`" class="w-full aspect-[16/9] object-cover" loading="lazy" />
+        </a>
+        <div class="p-6">
         <h3 class="text-lg font-semibold text-slate-900"><a :href="href" class="hover:underline">{{ title }}</a></h3>
         <p class="mt-2 text-slate-600">{{ summary }}</p>
 
@@ -32,6 +37,7 @@ const props = defineProps({
 
         <div class="mt-4 flex flex-wrap gap-2">
             <Badge v-for="t in tags" :key="t">{{ t }}</Badge>
+        </div>
         </div>
     </div>
 </template>

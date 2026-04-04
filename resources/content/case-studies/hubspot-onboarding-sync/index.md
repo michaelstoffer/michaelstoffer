@@ -10,7 +10,7 @@ metrics:
 stack: [Laravel, HubSpot API, MySQL, Redis]
 links: []
 tags: [Laravel, HubSpot, Webhooks]
-cover: /media/software/hubspot-onboarding-sync/cover.jpg
+# cover: /media/software/hubspot-onboarding-sync/cover.jpg
 ---
 
 As the sales team scaled, the handoff from closed-won to active onboarding became a bottleneck. Contact lifecycle stages in HubSpot would drift out of sync with the internal onboarding database—sometimes by hours, sometimes by days—causing support teams to act on stale data and triggering duplicate outreach to new customers.

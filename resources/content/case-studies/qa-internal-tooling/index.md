@@ -9,7 +9,7 @@ metrics:
 stack: [Vue 3, Inertia, Laravel, MySQL]
 links: []
 tags: [Vue 3, RBAC, Auditing]
-cover: /media/software/qa-internal-tooling/cover.jpg
+# cover: /media/software/qa-internal-tooling/cover.jpg
 ---
 
 The QA team was managing their review queue across a mix of spreadsheets and email threads. Every context switch—open spreadsheet, find the next item, copy an ID, switch back to the review tool—added friction that compounded across hundreds of reviews per day. Handoffs between shifts were inconsistent and audit trails were essentially nonexistent.

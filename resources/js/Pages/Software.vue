@@ -53,7 +53,7 @@ const stack = [
         <section class="py-12 sm:py-16">
             <SectionHeading eyebrow="Proof" title="Recent case studies" sub="Problem → approach → result." />
             <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                <CaseStudyCard v-for="cs in caseStudies" :key="cs.slug" :title="cs.title" :summary="cs.summary" :href="`/software/${cs.slug}`" :problem="cs.problem" :approach="cs.approach" :result="cs.result" :tags="cs.tags" />
+                <CaseStudyCard v-for="cs in caseStudies" :key="cs.slug" :title="cs.title" :summary="cs.summary" :href="`/software/${cs.slug}`" :cover="cs.cover" :problem="cs.problem" :approach="cs.approach" :result="cs.result" :tags="cs.tags" />
             </div>
             <div class="mt-10">
                 <ButtonLink href="/contact">Start a project</ButtonLink>
