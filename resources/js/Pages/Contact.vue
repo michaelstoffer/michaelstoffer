@@ -78,7 +78,7 @@ function submit(){
 
             <!-- Location / other ways -->
             <div class="mt-10 text-sm text-slate-600">
-                <p>Based in <span class="font-medium">Myrtle Beach, SC</span></p>
+                <p>Based in <span class="font-medium">Orlando, FL</span></p>
                 <p class="mt-1">Prefer email? <a href="mailto:mstoffer@michaelstoffer.com" class="hover:underline">mstoffer@michaelstoffer.com</a></p>
             </div>
         </section>

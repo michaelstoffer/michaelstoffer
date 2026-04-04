@@ -34,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
             'name' => 'Michael Stoffer',
             'tagline' => 'Engineer • Songwriter • Photographer',
             'url' => config('app.url', 'https://www.michaelstoffer.com'),
-            'location' => 'Myrtle Beach, SC',
+            'location' => 'Orlando, FL',
             'email' => 'mstoffer@michaelstoffer.com',
             'socials' => [
                 'github' => 'https://github.com/michaelstoffer',
