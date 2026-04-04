@@ -2,7 +2,7 @@
 title: What Is PHP and Why It’s Essential for Web Development
 excerpt: Have you ever wondered how websites function behind the scenes? When you visit your favorite online store or log into a...
 cover: /media/blog/what-is-php-and-why-its-essential-for-web-development/cover.webp
-published_at: "2025-03-27 08:00:00 -0400"
+published_at: "2025-12-04 08:00:00 -0400"
 modified_at: "2025-03-27 08:00:00 -0400"
 tags: ["Development"]
 ---

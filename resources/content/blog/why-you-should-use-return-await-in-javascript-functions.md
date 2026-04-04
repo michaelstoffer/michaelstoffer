@@ -2,7 +2,7 @@
 title: Why You Should Use Return Await in JavaScript Functions
 excerpt: As a seasoned developer, I've spent years navigating the intricacies of JavaScript's asynchronous behavior. One topic that often...
 cover: /media/blog/why-you-should-use-return-await-in-javascript-functions/cover.webp
-published_at: "2025-03-31 08:00:00 -0400"
+published_at: "2026-02-05 08:00:00 -0500"
 modified_at: "2025-03-31 08:00:00 -0400"
 tags: ["Frontend", "Development"]
 ---

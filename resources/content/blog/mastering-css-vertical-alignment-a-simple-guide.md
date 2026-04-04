@@ -2,7 +2,7 @@
 title: "Mastering CSS Vertical Alignment: A Simple Guide"
 excerpt: Vertical alignment in CSS can feel like a puzzle that every web developer must solve. If you’ve ever struggled with...
 cover: /media/blog/mastering-css-vertical-alignment-a-simple-guide/cover.webp
-published_at: "2025-04-03 08:00:00 -0400"
+published_at: "2026-03-20 08:00:00 -0400"
 modified_at: "2025-04-03 08:00:00 -0400"
 tags: ["Development", "Frontend"]
 ---

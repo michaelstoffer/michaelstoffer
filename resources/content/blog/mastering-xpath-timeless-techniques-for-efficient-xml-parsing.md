@@ -2,7 +2,7 @@
 title: "Mastering XPath: Timeless Techniques for Efficient XML Parsing"
 excerpt: Master XPath with this friendly guide to XML navigation. Discover simple syntax, practical tips, and best practices for data extraction and...
 cover: /media/blog/mastering-xpath-timeless-techniques-for-efficient-xml-parsing/cover.webp
-published_at: "2025-04-01 08:00:00 -0400"
+published_at: "2026-02-19 08:00:00 -0500"
 modified_at: "2025-04-01 08:00:00 -0400"
 tags: ["Development"]
 ---

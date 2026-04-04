@@ -2,7 +2,7 @@
 title: 10 Essential Git Commands Every Developer Should Start Using
 excerpt: If you're a developer, you've probably heard of Git—a powerful version control tool that helps you manage your code efficiently.
 cover: /media/blog/10-essential-git-commands-every-developer-should-start-using/cover.webp
-published_at: "2025-03-19 08:00:00 -0400"
+published_at: "2025-08-14 08:00:00 -0400"
 modified_at: "2025-03-19 08:00:00 -0400"
 tags: ["Tools"]
 ---
