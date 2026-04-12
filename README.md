@@ -1,65 +1,71 @@
-### Hi there, I'm Michael - aka [michaelstoffer][website] 👋
+<div align="center">
 
-[![Laravel Forge Site Deployment Status](https://img.shields.io/endpoint?url=https%3A%2F%2Fforge.laravel.com%2Fsite-badges%2F0f9522cc-2766-47bd-a7f1-20eec58f1aaa%3Flabel%3D1&style=plastic)](https://forge.laravel.com/servers/961736/sites/2855430)
-[![Website](https://img.shields.io/website?label=michaelstoffer.com&style=for-the-badge&url=https%3A%2F%2Fmichaelstoffer.com)](https://www.michaelstoffer.com)
-[![Twitter Follow](https://img.shields.io/twitter/follow/michaelstoffer?color=1DA1F2&logo=twitter&style=for-the-badge)](https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fgithub.com%2Fmichaelstoffer&screen_name=michaelstoffer)
+# Michael Stoffer
 
-## Laravel + Vue craftsman—shipping clean, resilient apps.
+**Full-stack engineer. 20 years building things that actually ship.**
 
-- 🌱 Engineer, photographer, and music maker — shipping with care�
-- 👯 Code by day, cameras & chords by night.
-- 🥅 Where product thinking meets pixel polish.
-- ⚡ Web apps, good docs, better vibes.
+[![Website](https://img.shields.io/badge/michaelstoffer.com-222222?style=for-the-badge&logo=safari&logoColor=white)](https://www.michaelstoffer.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/michaelstoffer)
+[![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/michaelstoffer)
+[![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-ea4aaa?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/michaelstoffer)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=000000)](https://www.buymeacoffee.com/michaelstoffer)
 
-### Connect with me:
-
-[<img align="left" alt="michaelstoffer.com" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][website]
-[<img align="left" alt="michaelstoffer | Twitter" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitter.svg" />][twitter]
-[<img align="left" alt="michaelstoffer | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
-
-<br/>
-
-### Languages and Tools:
-
-[<img align="left" alt="XCode" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/xcode/xcode.png" />][xcode]
-[<img align="left" alt="Sublime Text" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sublime-text/sublime-text.png" />][sublimetext]
-[<img align="left" alt="Swift" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/swift/swift.png" />][swift]
-[<img align="left" alt="HTML5" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" />][html5]
-[<img align="left" alt="CSS3" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" />][css]
-[<img align="left" alt="Sass" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sass/sass.png" />][sass]
-[<img align="left" alt="JavaScript" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" />][javascript]
-[<img align="left" alt="Vue" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/vue/vue.png" />][vuejs]
-[<img align="left" alt="Node.js" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" />][nodejs]
-[<img align="left" alt="PHP" width="26px" src="https://raw.githubusercontent.com/github/explore/361e2821e2dea67711cde99c9c40ed357061cf27/topics/php/php.png" />][php]
-[<img align="left" alt="Laravel" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/laravel/laravel.png" />][laravel]
-[<img align="left" alt="WordPress" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/wordpress/wordpress.png" />][wordpress]
-[<img align="left" alt="MySQL" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mysql/mysql.png" />][mysql]
-[<img align="left" alt="Git" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png" />][git]
-[<img align="left" alt="GitHub" width="26px" src="https://raw.githubusercontent.com/github/explore/78df643247d429f6cc873026c0622819ad797942/topics/github/github.png" />][github]
-[<img align="left" alt="AWS" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/aws/aws.png" />][aws]
-
-<br/>
+</div>
 
 ---
 
-![Visitor Count](https://profile-counter.glitch.me/michaelstoffer/count.svg)
+Laravel and Vue are my primary tools, but the real work is understanding a domain well enough to model it cleanly. I've spent two decades in the Laravel ecosystem — long enough to know when to reach for a package and when to write 40 lines of vanilla PHP instead.
 
-[website]: https://michaelstoffer.com
-[twitter]: https://x.com/michaelstoffer
-[linkedin]: https://linkedin.com/in/michaelstoffer
-[xcode]: https://developer.apple.com/xcode/
-[swift]: https://developer.apple.com/swift/
-[sublimetext]: https://www.sublimetext.com/
-[html5]: https://en.wikipedia.org/wiki/HTML5
-[css]: https://en.wikipedia.org/wiki/Cascading_Style_Sheets
-[sass]: https://sass-lang.com/
-[javascript]: https://www.javascript.com/
-[vuejs]: https://vuejs.org/
-[nodejs]: https://nodejs.org/en/
-[php]: https://www.php.net/
-[laravel]: https://laravel.com/
-[wordpress]: https://wordpress.org/
-[mysql]: https://www.mysql.com/
-[git]: https://git-scm.com/
-[github]: https://github.com/
-[aws]: https://aws.amazon.com/
+Based in Orlando, FL. When I'm not writing code I'm usually behind a camera or making noise with a guitar.
+
+> Most of my commit history lives in a private org from a previous engagement. What you see here is just the public side.
+
+---
+
+## What I'm Building
+
+### [FieldOps Hub](https://github.com/michaelstoffer/fieldops-hub)
+A field service management platform for trades businesses — HVAC, plumbing, electrical, landscaping. The kind of software that replaces a whiteboard, a spreadsheet, and three different apps.
+
+Built with Laravel 12 + Vue 3 + TypeScript. Ships with live GPS technician tracking, multi-tier estimates customers can accept online, automated SMS/email at job milestones via Twilio and SendGrid, Stripe invoicing, and a mobile-optimized PWA with offline support. Role-based access across five permission levels, owner dashboards with profitability and technician performance metrics.
+
+It's the kind of thing you build when you've watched enough small businesses manage their entire operation through a group text.
+
+---
+
+## Stack
+
+<div align="center">
+
+[![Skills](https://skillicons.dev/icons?i=php,laravel,js,ts,vue,tailwind,mysql,aws,git,vite&theme=dark&perline=10)](https://skillicons.dev)
+
+</div>
+
+**Day to day:** Laravel 12 · PHP 8.4 · Vue 3 · Inertia.js · Tailwind CSS 4 · Filament 4 · Pest · PHPStan · Vite · Laravel Forge · AWS
+
+**Currently exploring:** Laravel MCP · Laravel Nightwatch
+
+---
+
+## Stats
+
+<div align="center">
+
+<img height="160" alt="GitHub Stats" src="https://github-readme-stats.vercel.app/api?username=michaelstoffer&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" />
+<img height="160" alt="Top Languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=michaelstoffer&layout=compact&theme=tokyonight&hide_border=true&langs_count=6" />
+
+</div>
+
+<div align="center">
+
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=michaelstoffer&theme=tokyonight&hide_border=true)](https://git.io/streak-stats)
+
+</div>
+
+---
+
+<div align="center">
+
+[![Laravel Forge](https://img.shields.io/endpoint?url=https%3A%2F%2Fforge.laravel.com%2Fsite-badges%2F0f9522cc-2766-47bd-a7f1-20eec58f1aaa%3Flabel%3D1&style=flat-square)](https://forge.laravel.com/servers/961736/sites/2855430)&nbsp;&nbsp;![Visitor Count](https://profile-counter.glitch.me/michaelstoffer/count.svg)
+
+</div>
