@@ -17,7 +17,7 @@ class HomeController extends Controller
         if ($featuredCases->isEmpty()) {
             $featuredCases = collect($casesAll);
         }
-        $caseStudies = $featuredCases->take(3)->map(fn ($cs) => [
+        $caseStudies = $featuredCases->sortBy(fn ($cs) => $cs['order'] ?? PHP_INT_MAX)->values()->take(3)->map(fn ($cs) => [
             'slug' => $cs['slug'],
             'title' => $cs['title'],
             'summary' => $cs['summary'] ?? $cs['result'] ?? '',
@@ -35,7 +35,7 @@ class HomeController extends Controller
         if ($featuredSongs->isEmpty()) {
             $featuredSongs = collect($songsAll);
         }
-        $songs = $featuredSongs->take(3)->map(fn ($s) => [
+        $songs = $featuredSongs->sortBy(fn ($s) => $s['order'] ?? PHP_INT_MAX)->values()->take(3)->map(fn ($s) => [
             'slug' => $s['slug'],
             'title' => $s['title'],
             'summary' => $s['summary'] ?? $s['description'] ?? '',

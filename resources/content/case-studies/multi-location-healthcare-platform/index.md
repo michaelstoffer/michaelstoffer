@@ -12,6 +12,8 @@ stack: [Laravel 11, Vue 3, Inertia, MySQL, Redis]
 links: []
 tags: [Laravel, Vue 3, RBAC, Auditing]
 featured: true
+order: 2
+software_order: 3
 cover: /media/software/multi-location-healthcare-platform/cover.jpg
 ---
 

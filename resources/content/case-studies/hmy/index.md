@@ -12,6 +12,8 @@ stack: [Laravel, Vue.js, Tailwind CSS, MySQL]
 links: []
 tags: [Laravel, Vue.js, CMS, Performance, Frontend]
 featured: true
+order: 3
+software_order: 2
 cover: /media/software/hmy/cover.jpg
 ---
 

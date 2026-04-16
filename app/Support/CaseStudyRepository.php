@@ -32,9 +32,22 @@ class CaseStudyRepository
                     'tags' => $m['tags'] ?? [],
                     'cover' => $m['cover'] ?? null,
                     'featured' => $m['featured'] ?? false,
+                    'order' => $m['order'] ?? null,
+                    'software_order' => $m['software_order'] ?? null,
                 ];
             }
-            usort($items, fn ($a, $b) => strcasecmp($a['title'], $b['title']));
+            usort($items, function ($a, $b) {
+                $aOrder = $a['software_order'] ?? null;
+                $bOrder = $b['software_order'] ?? null;
+
+                if ($aOrder !== null && $bOrder !== null) {
+                    return $aOrder <=> $bOrder;
+                }
+                if ($aOrder !== null) return -1;
+                if ($bOrder !== null) return 1;
+
+                return strcasecmp($a['title'], $b['title']);
+            });
 
             return $items;
         });
