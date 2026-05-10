@@ -33,7 +33,7 @@ import headshotImage from '../../../public/media/about/headshot.jpg';
                     <section class="mt-10">
                         <h2 class="text-xl font-semibold text-slate-900">Timeline</h2>
                         <ol class="mt-4 space-y-3 text-sm text-slate-700">
-                            <li><span class="font-medium text-slate-900">Today —</span> Senior full‑stack engineer; songwriter; photographer.</li>
+                            <li><span class="font-medium text-slate-900">Today —</span> Senior full‑stack engineer; songwriter; photographer. Currently enrolled at Full Sail University in the Game Development program.</li>
                             <li><span class="font-medium text-slate-900">2015–Present —</span> Laravel + Vue feature work, integrations (auth, HubSpot, webhooks), PDFs/dashboards, and internal tools.</li>
                             <li><span class="font-medium text-slate-900">2008–2015 —</span> Built and launched client sites; learned the value of simple, durable stacks.</li>
                             <li><span class="font-medium text-slate-900">Earlier —</span> Grew up making things—music, code, and photos—one careful iteration at a time.</li>
