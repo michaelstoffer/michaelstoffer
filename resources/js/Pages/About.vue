@@ -67,7 +67,7 @@ import headshotImage from '../../../public/media/about/headshot.jpg';
 
                 <!-- Headshot -->
                 <aside class="order-first lg:order-none">
-                    <figure class="rounded-2xl border border-slate-200 bg-white overflow-hidden">
+                    <figure class="rounded-2xl max-w-lg border border-slate-200 bg-white overflow-hidden">
                         <img :src="headshotImage" alt="Michael Stoffer headshot" class="w-full aspect-square object-cover" loading="lazy" />
                         <figcaption class="p-4 text-sm text-slate-600">I prefer simple tools and clear handoffs.</figcaption>
                     </figure>
