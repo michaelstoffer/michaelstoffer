@@ -110,7 +110,5 @@ const props = defineProps({
                 <a href="/music" class="inline-flex items-center text-sm font-medium text-slate-900 hover:underline">View all songs</a>
             </div>
         </section>
-
-        <looking-back v-if="amr"  :amr="amr" />
     </AppLayout>
 </template>
