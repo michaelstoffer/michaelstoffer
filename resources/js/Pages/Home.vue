@@ -23,7 +23,7 @@ const props = defineProps({
         <!-- HERO -->
         <section class="pt-16 sm:pt-20 pb-12 sm:pb-16">
             <div class="max-w-3xl">
-                <h1 class="text-3xl sm:text-5xl font-semibold tracking-tight bg-linear-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
+                <h1 class="text-3xl sm:text-5xl py-2 font-semibold tracking-tight bg-linear-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
                     Engineer, songwriter, photographer—
                     <span class="whitespace-nowrap">building things that last.</span>
                 </h1>
