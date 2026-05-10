@@ -16,7 +16,7 @@ const renderedBody = computed(() => {
 
 <template>
     <AppLayout>
-        <SeoHead :title="`${props.case.study} - Case Study`" :description="props.case.summary || props.case.result" :url="`https://www.michaelstoffer.com/software/${slug}`" />
+        <SeoHead :title="`${props.case.title} - Case Study`" :description="props.case.summary || props.case.result" :url="`https://www.michaelstoffer.com/software/${slug}`" />
 
         <section class="pt-12 sm:pt-16 pb-8 max-w-3xl">
             <img v-if="props.case.cover" :src="props.case.cover" :alt="`${props.case.title} cover`" class="w-full rounded-2xl border border-slate-200 aspect-video object-cover mb-8" loading="lazy" />
