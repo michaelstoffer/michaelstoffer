@@ -4,11 +4,6 @@ import laravel from 'laravel-vite-plugin';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-    // build: {
-    //     rollupOptions: {
-    //         external: ['/media/about/headshot.jpg']
-    //     }
-    // },
     plugins: [
         vue(),
         laravel({
@@ -17,4 +12,16 @@ export default defineConfig({
         }),
         tailwindcss(),
     ],
+    build: {
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    // Vue + Inertia runtime: cached separately, shared across all pages
+                    vendor: ['vue', '@inertiajs/vue3'],
+                    // Markdown renderer only needed on blog/music pages
+                    markdown: ['marked'],
+                },
+            },
+        },
+    },
 });

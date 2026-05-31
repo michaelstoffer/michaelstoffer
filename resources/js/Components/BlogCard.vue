@@ -4,7 +4,7 @@ const props = defineProps({ post: { type: Object, required: true } })
 <template>
     <article class="rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg transition-shadow">
         <a :href="`/blog/${post.slug}`" class="block">
-            <img v-if="post.cover" :src="post.cover" :srcset="post.coverSrcset || undefined" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" :alt="`${post.title} cover`" class="w-full aspect-4/3 object-cover" loading="lazy" width="800" height="600" />
+            <img v-if="post.cover" :src="post.cover" :srcset="post.coverSrcset || undefined" sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1023px) calc(50vw - 40px), 400px" :alt="`${post.title} cover`" class="w-full aspect-4/3 object-cover" loading="lazy" width="800" height="600" />
             <div class="p-5">
                 <h2 class="text-lg font-semibold text-slate-900">{{ post.title }}</h2>
                 <div class="mt-2 flex flex-wrap gap-2">

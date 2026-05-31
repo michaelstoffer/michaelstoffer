@@ -19,7 +19,7 @@ const renderedBody = computed(() => {
         <SeoHead :title="`${props.case.title} - Case Study`" :description="props.case.summary || props.case.result" :url="`https://www.michaelstoffer.com/software/${slug}`" />
 
         <section class="pt-12 sm:pt-16 pb-8 max-w-3xl">
-            <img v-if="props.case.cover" :src="props.case.cover" :srcset="props.case.coverSrcset || undefined" sizes="(max-width: 768px) 100vw, 768px" :alt="`${props.case.title} cover`" class="w-full rounded-2xl border border-slate-200 aspect-video object-cover mb-8" fetchpriority="high" width="1600" height="900" />
+            <img v-if="props.case.cover" :src="props.case.cover" :srcset="props.case.coverSrcset || undefined" sizes="(max-width: 767px) calc(100vw - 32px), 768px" :alt="`${props.case.title} cover`" class="w-full rounded-2xl border border-slate-200 aspect-video object-cover mb-8" fetchpriority="high" width="1600" height="900" />
             <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">{{ props.case.title }}</h1>
             <p class="mt-3 text-slate-700">{{ props.case.result }}</p>
 

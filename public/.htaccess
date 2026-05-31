@@ -1,3 +1,26 @@
+# Cache-Control for static assets served directly by Apache
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # Vite fingerprinted assets: content-hash in filename → 1 year immutable
+    <FilesMatch "\.(js|css|woff2|woff|ttf|otf)$">
+        ExpiresDefault "access plus 1 year"
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # Images and audio: 30 days
+    <FilesMatch "\.(webp|jpg|jpeg|png|gif|svg|ico|mp3|mp4|webm|ogg)$">
+        ExpiresDefault "access plus 30 days"
+        Header set Cache-Control "public, max-age=2592000, stale-while-revalidate=86400"
+    </FilesMatch>
+
+    # Manifests and feeds: 1 day
+    <FilesMatch "\.(webmanifest|xml|rss)$">
+        ExpiresDefault "access plus 1 day"
+        Header set Cache-Control "public, max-age=86400"
+    </FilesMatch>
+</IfModule>
+
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes

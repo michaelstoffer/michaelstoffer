@@ -15,7 +15,7 @@ const props = defineProps({
 <template>
     <div class="rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg transition-shadow">
         <a v-if="cover" :href="href" class="block">
-            <img :src="cover" :srcset="coverSrcset || undefined" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" :alt="`${title} cover`" class="w-full aspect-video object-cover" loading="lazy" width="1600" height="900" />
+            <img :src="cover" :srcset="coverSrcset || undefined" sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1023px) calc(50vw - 40px), 400px" :alt="`${title} cover`" class="w-full aspect-video object-cover" loading="lazy" width="1600" height="900" />
         </a>
         <div class="p-6">
         <h3 class="text-lg font-semibold text-slate-900"><a :href="href" class="hover:underline">{{ title }}</a></h3>
