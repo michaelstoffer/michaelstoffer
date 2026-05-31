@@ -9,6 +9,7 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 class PostRepository
 {
+    use ResolvesWebP;
     protected string $base;
 
     protected CommonMarkConverter $md;
@@ -45,7 +46,7 @@ class PostRepository
             'slug' => pathinfo($file, PATHINFO_FILENAME),
             'title' => $p['title'] ?? 'Untitled',
             'excerpt' => $p['excerpt'] ?? null,
-            'cover' => $p['cover'] ?? null,
+            ...$this->resolveCover($p['cover'] ?? null),
             'published_at' => $p['published_at'] ?? now()->toDateString(),
             'modified_at' => $p['modified_at'] ?? null,
             'html' => $doc->body(),

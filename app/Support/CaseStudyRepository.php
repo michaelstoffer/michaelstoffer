@@ -7,6 +7,7 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 class CaseStudyRepository
 {
+    use ResolvesWebP;
     protected string $base;
 
     public function __construct()
@@ -30,7 +31,7 @@ class CaseStudyRepository
                     'approach' => $m['approach'] ?? null,
                     'result' => $m['result'] ?? null,
                     'tags' => $m['tags'] ?? [],
-                    'cover' => $m['cover'] ?? null,
+                    ...$this->resolveCover($m['cover'] ?? null),
                     'featured' => $m['featured'] ?? false,
                     'order' => $m['order'] ?? null,
                     'software_order' => $m['software_order'] ?? null,

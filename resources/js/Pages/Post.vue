@@ -46,7 +46,7 @@ const ld = {
                         <span v-for="t in post.tags" :key="t" class="inline-flex items-center rounded-full border border-slate-300 bg-white px-2 py-0.5 text-xs text-slate-700">{{ t }}</span>
                     </div>
                 </section>
-                <img v-if="post.cover" :src="post.cover" :alt="post.title + ' cover'" class="mt-4 w-full rounded-xl border border-slate-200 aspect-video object-cover" fetchpriority="high" width="1600" height="900" />
+                <img v-if="post.cover" :src="post.cover" :srcset="post.coverSrcset || undefined" sizes="(max-width: 768px) 100vw, 768px" :alt="post.title + ' cover'" class="mt-4 w-full rounded-xl border border-slate-200 aspect-video object-cover" fetchpriority="high" width="1600" height="900" />
             </header>
 
             <div class="prose prose-slate mt-6 max-w-none post-content" v-html="renderedHtml"></div>

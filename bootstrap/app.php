@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\CacheHeaders;
 use App\Http\Middleware\LegacyRedirects;
 use App\Http\Middleware\RobotsHeader;
 use App\Http\Middleware\SecurityHeaders;
@@ -14,6 +15,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        $middleware->append(CacheHeaders::class);
         $middleware->append(SecurityHeaders::class);
         $middleware->append(RobotsHeader::class);
         $middleware->append(LegacyRedirects::class);

@@ -7,6 +7,7 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 class GalleryRepository
 {
+    use ResolvesWebP;
     protected string $base;
 
     public function __construct()
@@ -25,7 +26,7 @@ class GalleryRepository
                     'slug' => $m['slug'] ?? pathinfo($file, PATHINFO_FILENAME),
                     'title' => $m['title'] ?? '',
                     'description' => $m['description'] ?? '',
-                    'cover' => $m['cover'] ?? null,
+                    ...$this->resolveCover($m['cover'] ?? null),
                     'count' => isset($m['photos']) ? count($m['photos']) : null,
                     'tags' => $m['tags'] ?? [],
                 ];

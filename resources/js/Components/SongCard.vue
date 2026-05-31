@@ -6,7 +6,7 @@ const props = defineProps({ song: { type: Object, required: true } })
 <template>
     <article class="rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg transition-shadow">
         <Link :href="`/music/${song.slug}`" class="block">
-            <img v-if="song.cover" :src="song.cover" :alt="song.title" class="w-full aspect-video object-cover" loading="lazy" width="16" height="9" />
+            <img v-if="song.cover" :src="song.cover" :srcset="song.coverSrcset || undefined" sizes="(max-width: 640px) 100vw, (max-width: 1200px) 50vw, 33vw" :alt="song.title" class="w-full aspect-video object-cover" loading="lazy" width="16" height="9" />
             <div class="p-5">
                 <h3 class="text-lg font-semibold text-slate-900">{{ song.title }}</h3>
                 <p class="mt-1 text-xs text-slate-500">{{ song.duration }}</p>

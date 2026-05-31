@@ -7,6 +7,7 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 class MusicRepository
 {
+    use ResolvesWebP;
     protected string $base;
 
     public function __construct()
@@ -29,7 +30,7 @@ class MusicRepository
                     'key' => $m['key'] ?? null,
                     'bpm' => $m['bpm'] ?? null,
                     'audioSrc' => $m['audioSrc'] ?? null,
-                    'cover' => $m['cover'] ?? null,
+                    ...$this->resolveCover($m['cover'] ?? null),
                     'socialImage' => $m['socialImage'] ?? null,
                     'videoEmbed' => $m['videoEmbed'] ?? null,
                     'downloads' => $m['downloads'] ?? [],
