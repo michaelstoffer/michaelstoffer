@@ -55,7 +55,7 @@ const nav = [
             </div>
 
             <!-- Mobile menu -->
-            <div v-show="mobileOpen" class="md:hidden border-t border-slate-200">
+            <div id="mobile-nav" v-show="mobileOpen" :aria-hidden="!mobileOpen" class="md:hidden border-t border-slate-200">
                 <div class="px-4 py-3 space-y-2">
                     <Link v-for="item in nav" :key="item.name" :href="item.href"
                         :class="currentUrl.startsWith(item.href) ? 'block px-2 py-2 rounded text-amber-600 font-medium bg-amber-50' : 'block px-2 py-2 rounded text-slate-700 hover:bg-slate-100'">
@@ -66,7 +66,7 @@ const nav = [
         </header>
 
         <!-- Main slot -->
-        <main id="main" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <main id="main" tabindex="-1" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 focus:outline-none">
             <slot />
         </main>
 

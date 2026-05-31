@@ -51,10 +51,10 @@ function clearFilters() {
                     <span class="sr-only">Search posts</span>
                     <input v-model="q" type="search" placeholder="Search posts…" class="w-full pt-1 pb-1 rounded-lg bg-slate-200 border-slate-300 focus:border-slate-400 focus:ring-0 pl-4" />
                 </label>
-                <div class="flex flex-wrap gap-2 items-center">
-                    <button @click="activeTag = ''" :class="['px-3 py-1.5 rounded-full text-sm border', activeTag === '' ? 'bg-slate-900 text-white border-slate-900' : 'bg-white text-slate-900 border-slate-300']">All</button>
-                    <button v-for="t in allTags" :key="t" @click="activeTag = t" :class="['px-3 py-1.5 rounded-full text-sm border', activeTag === t ? 'bg-slate-900 text-white border-slate-900' : 'bg-white text-slate-900 border-slate-300']">{{ t }}</button>
-                    <button v-if="q || activeTag" @click="clearFilters" class="px-3 py-1.5 rounded-full text-sm border border-slate-300">Clear</button>
+                <div class="flex flex-wrap gap-2 items-center" role="group" aria-label="Filter by tag">
+                    <button @click="activeTag = ''" :aria-pressed="activeTag === ''" :class="['px-3 py-1.5 rounded-full text-sm border', activeTag === '' ? 'bg-slate-900 text-white border-slate-900' : 'bg-white text-slate-900 border-slate-300']">All</button>
+                    <button v-for="t in allTags" :key="t" @click="activeTag = t" :aria-pressed="activeTag === t" :class="['px-3 py-1.5 rounded-full text-sm border', activeTag === t ? 'bg-slate-900 text-white border-slate-900' : 'bg-white text-slate-900 border-slate-300']">{{ t }}</button>
+                    <button v-if="q || activeTag" @click="clearFilters" class="px-3 py-1.5 rounded-full text-sm border border-slate-300">Clear filters</button>
                 </div>
             </div>
         </section>

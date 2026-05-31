@@ -6,7 +6,7 @@ const props = defineProps({ gallery: { type: Object, required: true } })
 <template>
     <article class="rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg transition-shadow">
         <Link :href="`/photography/${gallery.slug}`" class="block">
-            <img v-if="gallery.cover" :src="gallery.cover" :alt="`${gallery.title} cover`" class="w-full aspect-[4/3] object-cover" loading="lazy" />
+            <img v-if="gallery.cover" :src="gallery.cover" :alt="`${gallery.title} cover`" class="w-full aspect-[4/3] object-cover" loading="lazy" width="4" height="3" />
             <div class="p-5">
                 <h3 class="text-lg font-semibold text-slate-900">{{ gallery.title }}</h3>
                 <p class="mt-1 text-xs text-slate-500" v-if="gallery.count">{{ gallery.count }} photos</p>

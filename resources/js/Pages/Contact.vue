@@ -29,20 +29,26 @@ function submit(){
 
             <form @submit.prevent="submit" class="mt-8 space-y-5">
                 <div>
-                    <label class="block text-sm font-medium text-slate-900">Name</label>
-                    <input v-model="form.name" type="text" required class="mt-1 w-full bg-slate-200 pt-1 pb-1 rounded-lg border-slate-300 focus:border-slate-400 focus:ring-0" />
-                    <p v-if="form.errors.name" class="mt-1 text-sm text-red-600">{{ form.errors.name }}</p>
+                    <label for="contact-name" class="block text-sm font-medium text-slate-900">Name</label>
+                    <input id="contact-name" v-model="form.name" type="text" required autocomplete="name"
+                        :aria-describedby="form.errors.name ? 'contact-name-error' : undefined"
+                        :aria-invalid="!!form.errors.name"
+                        class="mt-1 w-full bg-slate-200 pt-1 pb-1 rounded-lg border-slate-300 focus:border-slate-400 focus:ring-0" />
+                    <p v-if="form.errors.name" id="contact-name-error" role="alert" class="mt-1 text-sm text-red-600">{{ form.errors.name }}</p>
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium text-slate-900">Email</label>
-                    <input v-model="form.email" type="email" required class="mt-1 w-full bg-slate-200 pt-1 pb-1 rounded-lg border-slate-300 focus:border-slate-400 focus:ring-0" />
-                    <p v-if="form.errors.email" class="mt-1 text-sm text-red-600">{{ form.errors.email }}</p>
+                    <label for="contact-email" class="block text-sm font-medium text-slate-900">Email</label>
+                    <input id="contact-email" v-model="form.email" type="email" required autocomplete="email"
+                        :aria-describedby="form.errors.email ? 'contact-email-error' : undefined"
+                        :aria-invalid="!!form.errors.email"
+                        class="mt-1 w-full bg-slate-200 pt-1 pb-1 rounded-lg border-slate-300 focus:border-slate-400 focus:ring-0" />
+                    <p v-if="form.errors.email" id="contact-email-error" role="alert" class="mt-1 text-sm text-red-600">{{ form.errors.email }}</p>
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium text-slate-900">Topic</label>
-                    <select v-model="form.topic" class="mt-1 w-full bg-slate-200 pt-1 pb-1 rounded-lg pl-4 border-slate-300 focus:border-slate-400 focus:ring-0">
+                    <label for="contact-topic" class="block text-sm font-medium text-slate-900">Topic</label>
+                    <select id="contact-topic" v-model="form.topic" class="mt-1 w-full bg-slate-200 pt-1 pb-1 rounded-lg pl-4 border-slate-300 focus:border-slate-400 focus:ring-0">
                         <option value="">Select a topic…</option>
                         <option>Software</option>
                         <option>Music</option>
@@ -52,15 +58,21 @@ function submit(){
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium text-slate-900">Message</label>
-                    <textarea v-model="form.message" required rows="6" class="mt-1 w-full bg-slate-200 pt-1 pb-1 rounded-lg border-slate-300 focus:border-slate-400 focus:ring-0"></textarea>
-                    <p v-if="form.errors.message" class="mt-1 text-sm text-red-600">{{ form.errors.message }}</p>
+                    <label for="contact-message" class="block text-sm font-medium text-slate-900">Message</label>
+                    <textarea id="contact-message" v-model="form.message" required rows="6"
+                        :aria-describedby="form.errors.message ? 'contact-message-error' : undefined"
+                        :aria-invalid="!!form.errors.message"
+                        class="mt-1 w-full bg-slate-200 pt-1 pb-1 rounded-lg border-slate-300 focus:border-slate-400 focus:ring-0"></textarea>
+                    <p v-if="form.errors.message" id="contact-message-error" role="alert" class="mt-1 text-sm text-red-600">{{ form.errors.message }}</p>
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium text-slate-900">(Optional) Link to brief/spec</label>
-                    <input v-model="form.link" type="url" placeholder="https://…" class="mt-1 w-full bg-slate-200 pt-1 pb-1 pl-4 rounded-lg border-slate-300 focus:border-slate-400 focus:ring-0" />
-                    <p v-if="form.errors.link" class="mt-1 text-sm text-red-600">{{ form.errors.link }}</p>
+                    <label for="contact-link" class="block text-sm font-medium text-slate-900">(Optional) Link to brief/spec</label>
+                    <input id="contact-link" v-model="form.link" type="url" placeholder="https://…"
+                        :aria-describedby="form.errors.link ? 'contact-link-error' : undefined"
+                        :aria-invalid="!!form.errors.link"
+                        class="mt-1 w-full bg-slate-200 pt-1 pb-1 pl-4 rounded-lg border-slate-300 focus:border-slate-400 focus:ring-0" />
+                    <p v-if="form.errors.link" id="contact-link-error" role="alert" class="mt-1 text-sm text-red-600">{{ form.errors.link }}</p>
                 </div>
 
                 <!-- Honeypot -->

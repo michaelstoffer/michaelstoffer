@@ -78,7 +78,7 @@ const props = defineProps({
 
         <!-- LATEST BLOG -->
         <section class="py-12 sm:py-16">
-            <SectionHeading eyebrow="From the Blog" title="Latest writing" sub="Thoughts on building, learning, and shipping.", linkHref="/blog" linkText="All posts" />
+            <SectionHeading eyebrow="From the Blog" title="Latest writing" sub="Thoughts on building, learning, and shipping." linkHref="/blog" linkText="All posts" />
             <div v-if="latestPosts.length" class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
                 <BlogCard v-for="p in latestPosts" :key="p.slug" :post="p" />
             </div>
@@ -95,7 +95,7 @@ const props = defineProps({
             <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <article v-for="s in props.songs" :key="s.slug" class="rounded-2xl border border-slate-200 bg-white overflow-hidden">
                     <a :href="`/music/${s.slug}`" class="block">
-                        <img v-if="s.cover" :src="s.cover" :alt="s.title + ' cover'" class="w-full aspect-square object-cover" loading="lazy" />
+                        <img v-if="s.cover" :src="s.cover" :alt="s.title + ' cover'" class="w-full aspect-square object-cover" loading="lazy" width="1" height="1" />
                         <div class="p-5">
                             <h3 class="text-lg font-semibold text-slate-900">{{ s.title }}</h3>
                             <p v-if="s.duration" class="mt-1 text-xs text-slate-500">{{ s.duration }}</p>
