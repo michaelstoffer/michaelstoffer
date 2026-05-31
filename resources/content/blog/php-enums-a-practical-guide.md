@@ -2,8 +2,8 @@
 title: "PHP Enums: A Practical Guide"
 excerpt: PHP 8.1 introduced native enums, giving you a proper type for a fixed set of values — replacing scattered string constants with something PHP can actually enforce.
 cover: /media/blog/php-enums-a-practical-guide/cover.webp
-published_at: "2026-05-15 08:00:00 -0400"
-modified_at: "2026-05-15 08:00:00 -0400"
+published_at: "2026-05-18 08:00:00 -0400"
+modified_at: "2026-05-18 08:00:00 -0400"
 tags: ["PHP", "Laravel", "Development"]
 ---
 
