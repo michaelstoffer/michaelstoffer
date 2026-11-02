@@ -2,6 +2,7 @@
 import SeoHead from '@/Components/SeoHead.vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import SongCard from '@/Components/SongCard.vue'
+import LazyAudioPlayer from '@/Components/LazyAudioPlayer.vue'
 
 const props = defineProps({
     slug: { type: String, required: true },
@@ -25,7 +26,7 @@ const props = defineProps({
                 <div class="rounded-2xl border border-slate-200 bg-white overflow-hidden">
                     <img v-if="song.cover" :src="song.cover" :alt="song.title" class="w-full aspect-square object-cover" loading="lazy" />
                     <div class="p-4">
-                        <audio v-if="song.audioSrc" :src="song.audioSrc" controls class="w-full"></audio>
+                        <LazyAudioPlayer v-if="song.audioSrc" :src="song.audioSrc" :title="song.title" />
                         <p class="mt-3 text-sm text-slate-600" v-if="song.duration">
                             <span class="font-medium text-slate-900">Duration:</span> {{ song.duration }}
                         </p>

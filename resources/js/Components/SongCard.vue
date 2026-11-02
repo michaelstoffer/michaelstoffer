@@ -1,5 +1,6 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
+import LazyAudioPlayer from '@/Components/LazyAudioPlayer.vue'
 const props = defineProps({ song: { type: Object, required: true } })
 </script>
 
@@ -17,7 +18,7 @@ const props = defineProps({ song: { type: Object, required: true } })
             </div>
         </Link>
         <div v-if="song.audioSrc" class="px-5 pb-5">
-            <audio :src="song.audioSrc" controls class="w-full"></audio>
+            <LazyAudioPlayer :src="song.audioSrc" :title="song.title" />
         </div>
     </article>
 </template>
