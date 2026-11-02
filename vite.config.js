@@ -17,9 +17,11 @@ export default defineConfig({
         sourcemap: false,
         rollupOptions: {
             output: {
-                manualChunks: {
-                    // Vue + Inertia runtime: cached separately, shared across all pages
-                    vendor: ['vue', '@inertiajs/vue3'],
+                manualChunks(id) {
+                    // Vue + Inertia runtime: cached separately, shared across all pages.
+                    if (id.includes('/node_modules/vue/') || id.includes('/node_modules/@inertiajs/')) {
+                        return 'vendor';
+                    }
                 },
             },
         },
