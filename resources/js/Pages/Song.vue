@@ -2,8 +2,6 @@
 import SeoHead from '@/Components/SeoHead.vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import SongCard from '@/Components/SongCard.vue'
-import { marked } from 'marked'
-import {computed} from "vue"
 
 const props = defineProps({
     slug: { type: String, required: true },
@@ -11,9 +9,6 @@ const props = defineProps({
     related: { type: Array, default: () => [] },
 })
 
-const renderedBody = computed(() => {
-    return props.song.body ? marked.parse(props.song.body) : ''
-})
 </script>
 
 <template>
@@ -59,7 +54,7 @@ const renderedBody = computed(() => {
                     <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">{{ song.title }}</h1>
                     <p v-if="song.subtitle" class="mt-1 text-slate-500">{{ song.subtitle }}</p>
                     <p v-if="song.description" class="mt-4 text-lg text-slate-700">{{ song.description }}</p>
-                    <div v-if="renderedBody" class="mt-4 text-slate-700 markdown-body" v-html="renderedBody" />
+                    <div v-if="song.html" class="mt-4 text-slate-700 markdown-body" v-html="song.html" />
                 </header>
 
                 <!-- Video -->

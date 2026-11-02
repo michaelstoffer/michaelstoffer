@@ -1,17 +1,12 @@
 <script setup>
 import SeoHead from '@/Components/SeoHead.vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
-import { computed } from 'vue'
-import { marked } from 'marked'
 
 const props = defineProps({
     slug: { type: String },
     case: { type: Object },
 })
 
-const renderedBody = computed(() => {
-    return props.case.body ? marked.parse(props.case.body) : ''
-})
 </script>
 
 <template>
@@ -59,7 +54,7 @@ const renderedBody = computed(() => {
                 </ul>
             </div>
 
-            <div v-if="renderedBody" class="prose prose-slate mt-10 max-w-none post-content" v-html="renderedBody"></div>
+            <div v-if="props.case.html" class="prose prose-slate mt-10 max-w-none post-content" v-html="props.case.html"></div>
         </section>
     </AppLayout>
 </template>

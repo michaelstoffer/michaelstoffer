@@ -7,6 +7,9 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 beforeEach(function () {
     Cache::forget('case:all');
     Cache::forget('case:hubspot-onboarding-sync');
+    Cache::forget('case:all:v2');
+    Cache::forget('case:hubspot-onboarding-sync:v2');
+    Cache::forget('case:unsafe:v2');
 });
 
 test('all returns an array of case studies', function () {
@@ -44,18 +47,31 @@ test('find returns a case study by slug', function () {
     expect($case['title'])->toBe('HubSpot Onboarding Sync');
 });
 
-test('find includes body content', function () {
+test('find includes rendered html without exposing raw markdown', function () {
     $repo = new CaseStudyRepository;
     $case = $repo->find('hubspot-onboarding-sync');
 
-    expect($case)->toHaveKey('body');
+    expect($case)->toHaveKey('html')
+        ->and($case)->not->toHaveKey('body');
 });
 
 test('find caches the result', function () {
     $repo = new CaseStudyRepository;
     $repo->find('hubspot-onboarding-sync');
 
-    expect(Cache::has('case:hubspot-onboarding-sync'))->toBeTrue();
+    expect(Cache::has('case:hubspot-onboarding-sync:v2'))->toBeTrue();
+});
+
+test('case study html is rendered and sanitized on the server', function () {
+    $repo = new CaseStudyRepository(base_path('tests/Fixtures/case-studies'));
+    $case = $repo->find('unsafe');
+
+    expect($case['html'])
+        ->toContain('<h1>Safe heading</h1>')
+        ->toContain('Kept text')
+        ->not->toContain('<script')
+        ->not->toContain('<iframe')
+        ->not->toContain('onclick');
 });
 
 test('find throws 404 for unknown slug', function () {

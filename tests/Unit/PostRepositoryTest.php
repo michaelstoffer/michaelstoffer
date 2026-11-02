@@ -24,7 +24,6 @@ test('each post has required keys', function () {
         'published_label',
         'modified_at',
         'modified_label',
-        'html',
         'tags',
         'featured',
         'status',
@@ -54,7 +53,24 @@ test('find returns a single post by slug', function () {
     $post = $repo->find('10-essential-git-commands-every-developer-should-start-using');
 
     expect($post['slug'])->toBe('10-essential-git-commands-every-developer-should-start-using');
-    expect($post['title'])->not->toBeEmpty();
+    expect($post['title'])->not->toBeEmpty()
+        ->and($post['html'])->toContain('<h2>');
+});
+
+test('post html is rendered and sanitized on the server', function () {
+    $repo = new PostRepository(base_path('tests/Fixtures/blog'));
+    $post = $repo->find('unsafe-post');
+
+    expect($post['html'])
+        ->toContain('<h1>Safe heading</h1>')
+        ->toContain('Kept text')
+        ->toContain('href="/about"')
+        ->not->toContain('<script')
+        ->not->toContain('<iframe')
+        ->not->toContain('javascript:')
+        ->not->toContain('onerror')
+        ->not->toContain('onclick')
+        ->not->toContain('style=');
 });
 
 test('find throws 404 for unknown slug', function () {
@@ -76,9 +92,9 @@ test('publication labels are formatted consistently without browser locale conve
 test('future and draft posts are hidden unless explicitly requested', function () {
     $repo = new PostRepository(base_path('tests/Fixtures/blog'));
 
-    expect(array_column($repo->latest(), 'slug'))->toBe(['published-post'])
+    expect(array_column($repo->latest(), 'slug'))->toBe(['published-post', 'unsafe-post'])
         ->and(array_column($repo->latest(includeUnpublished: true), 'slug'))
-        ->toBe(['future-post', 'draft-post', 'published-post'])
+        ->toBe(['future-post', 'draft-post', 'published-post', 'unsafe-post'])
         ->and(fn () => $repo->find('future-post'))
         ->toThrow(HttpException::class)
         ->and($repo->find('future-post', includeUnpublished: true)['slug'])->toBe('future-post');

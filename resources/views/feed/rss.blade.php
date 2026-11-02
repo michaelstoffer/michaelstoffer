@@ -11,7 +11,7 @@
                 <link>{{ config('app.url') }}/blog/{{ $p['slug'] }}</link>
                 <guid isPermaLink="true">{{ config('app.url') }}/blog/{{ $p['slug'] }}</guid>
                 <pubDate>{{ \Carbon\Carbon::parse($p['published_at'])->toRfc2822String() }}</pubDate>
-                <description><![CDATA[{!! $p['excerpt'] ?? Str::limit(strip_tags($p['body'] ?? ''), 300) !!}]]></description>
+                <description>{{ $p['excerpt'] ?? '' }}</description>
             </item>
         @endforeach
     </channel>

@@ -5,7 +5,6 @@
 namespace App\Support;
 
 use Carbon\CarbonImmutable;
-use League\CommonMark\CommonMarkConverter;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 class PostRepository
@@ -14,12 +13,12 @@ class PostRepository
 
     protected string $base;
 
-    protected CommonMarkConverter $md;
+    protected SafeMarkdownRenderer $renderer;
 
-    public function __construct(?string $base = null)
+    public function __construct(?string $base = null, ?SafeMarkdownRenderer $renderer = null)
     {
         $this->base = $base ?? resource_path('content/blog');
-        $this->md = new CommonMarkConverter(['html_input' => 'strip', 'allow_unsafe_links' => false]);
+        $this->renderer = $renderer ?? app(SafeMarkdownRenderer::class);
     }
 
     public function latest(int $limit = 100, bool $includeUnpublished = false): array
@@ -41,20 +40,20 @@ class PostRepository
         $file = $this->base."/$slug.md";
         abort_unless(file_exists($file), 404);
 
-        $post = $this->parse($file);
+        $post = $this->parse($file, includeHtml: true);
         abort_unless($includeUnpublished || $this->isPublished($post), 404);
 
         return $post;
     }
 
-    protected function parse(string $file): array
+    protected function parse(string $file, bool $includeHtml = false): array
     {
         $doc = YamlFrontMatter::parseFile($file);
         $p = $doc->matter();
         $publishedAt = CarbonImmutable::parse($p['published_at'] ?? now());
         $modifiedAt = isset($p['modified_at']) ? CarbonImmutable::parse($p['modified_at']) : null;
 
-        return [
+        $post = [
             'slug' => pathinfo($file, PATHINFO_FILENAME),
             'title' => $p['title'] ?? 'Untitled',
             'excerpt' => $p['excerpt'] ?? null,
@@ -63,11 +62,16 @@ class PostRepository
             'published_label' => $publishedAt->format('F j, Y'),
             'modified_at' => $modifiedAt?->toIso8601String(),
             'modified_label' => $modifiedAt?->format('F j, Y'),
-            'html' => $doc->body(),
             'tags' => $p['tags'] ?? [],
             'featured' => (bool) ($p['featured'] ?? false),
             'status' => $p['status'] ?? 'published',
         ];
+
+        if ($includeHtml) {
+            $post['html'] = $this->renderer->render($doc->body());
+        }
+
+        return $post;
     }
 
     protected function isPublished(array $post): bool

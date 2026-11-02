@@ -14,13 +14,14 @@ class MusicController extends Controller
 
         return Inertia::render('Music', [
             ...compact('songs'),
-            'amr' => '/media/music/apple_music_replay_25.mp4'
+            'amr' => '/media/music/apple_music_replay_25.mp4',
         ]);
     }
 
     public function show(string $slug): Response
     {
-        $library = collect(app(MusicRepository::class)->all())->mapWithKeys(function ($item) {
+        $repository = app(MusicRepository::class);
+        $library = collect($repository->all())->mapWithKeys(function ($item) {
             return [$item['slug'] => $item];
         });
 
@@ -28,7 +29,7 @@ class MusicController extends Controller
 
         return Inertia::render('Song', [
             'slug' => $slug,
-            'song' => $library->get($slug),
+            'song' => $repository->find($slug),
             'related' => $library->except($slug)->take(2)->values()->all(),
         ]);
     }

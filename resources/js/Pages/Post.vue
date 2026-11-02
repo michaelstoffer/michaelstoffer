@@ -2,14 +2,8 @@
 import SeoHead from '@/Components/SeoHead.vue'
 import AppLayout from '@/Layouts/AppLayout.vue'
 import JsonLd from '@/Components/JsonLd.vue'
-import { marked } from 'marked'
-import {computed} from "vue"
 
 const props = defineProps({ post: { type: Object, required: true } })
-
-const renderedHtml = computed(() => {
-    return props.post.html ? marked.parse(props.post.html) : ''
-})
 
 const ld = {
     '@context':'https://schema.org', '@type':'Article',
@@ -49,7 +43,7 @@ const ld = {
                 <img v-if="post.cover" :src="post.cover" :srcset="post.coverSrcset || undefined" sizes="(max-width: 767px) calc(100vw - 32px), 768px" :alt="post.title + ' cover'" class="mt-4 w-full rounded-xl border border-slate-200 aspect-video object-cover" fetchpriority="high" width="1600" height="900" />
             </header>
 
-            <div class="prose prose-slate mt-6 max-w-none post-content" v-html="renderedHtml"></div>
+            <div class="prose prose-slate mt-6 max-w-none post-content" v-html="post.html"></div>
         </article>
     </AppLayout>
 </template>

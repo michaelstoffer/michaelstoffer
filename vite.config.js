@@ -18,8 +18,6 @@ export default defineConfig({
                 manualChunks: {
                     // Vue + Inertia runtime: cached separately, shared across all pages
                     vendor: ['vue', '@inertiajs/vue3'],
-                    // Markdown renderer only needed on blog/music pages
-                    markdown: ['marked'],
                 },
             },
         },

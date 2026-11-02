@@ -8,16 +8,20 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 class CaseStudyRepository
 {
     use ResolvesWebP;
+
     protected string $base;
 
-    public function __construct()
+    protected SafeMarkdownRenderer $renderer;
+
+    public function __construct(?string $base = null, ?SafeMarkdownRenderer $renderer = null)
     {
-        $this->base = resource_path('content/case-studies');
+        $this->base = $base ?? resource_path('content/case-studies');
+        $this->renderer = $renderer ?? app(SafeMarkdownRenderer::class);
     }
 
     public function all(): array
     {
-        return Cache::remember('case:all', 3600, function () {
+        return Cache::remember('case:all:v2', 3600, function () {
             $items = [];
             foreach (glob($this->base.'/*/index.md') as $file) {
                 $doc = YamlFrontMatter::parseFile($file);
@@ -44,8 +48,12 @@ class CaseStudyRepository
                 if ($aOrder !== null && $bOrder !== null) {
                     return $aOrder <=> $bOrder;
                 }
-                if ($aOrder !== null) return -1;
-                if ($bOrder !== null) return 1;
+                if ($aOrder !== null) {
+                    return -1;
+                }
+                if ($bOrder !== null) {
+                    return 1;
+                }
 
                 return strcasecmp($a['title'], $b['title']);
             });
@@ -56,12 +64,14 @@ class CaseStudyRepository
 
     public function find(string $slug): array
     {
-        return Cache::remember("case:$slug", 3600, function () use ($slug) {
+        return Cache::remember("case:$slug:v2", 3600, function () use ($slug) {
             $file = $this->base."/$slug/index.md";
             abort_unless(is_file($file), 404);
             $doc = YamlFrontMatter::parseFile($file);
 
-            return array_merge($doc->matter(), ['body' => (string) $doc->body()]);
+            return array_merge($doc->matter(), [
+                'html' => $this->renderer->render($doc->body()),
+            ]);
         });
     }
 }
