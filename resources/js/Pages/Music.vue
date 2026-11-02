@@ -11,8 +11,6 @@ const props = defineProps({ songs: { type: Array, default: () => [] }, amr: { ty
 const q = ref('')
 const activeTag = ref('')
 
-console.log('AMR', props.amr)
-
 const allTags = computed(() => {
     const set = new Set()
     props.songs.forEach(s => (s.tags || []).forEach(t => set.add(t)))

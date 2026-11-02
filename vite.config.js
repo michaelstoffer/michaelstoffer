@@ -13,6 +13,8 @@ export default defineConfig({
         tailwindcss(),
     ],
     build: {
+        // Keep browser source maps private unless an error tracker upload step is added.
+        sourcemap: false,
         rollupOptions: {
             output: {
                 manualChunks: {

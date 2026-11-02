@@ -46,7 +46,7 @@ function show(i){ index.value = i; open.value = true }
             <h2 class="text-xl font-semibold text-slate-900">More galleries</h2>
             <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <a v-for="r in related" :key="r.slug" :href="`/photography/${r.slug}`" class="block rounded-2xl border border-slate-200 bg-white overflow-hidden hover:shadow-lg">
-                    <img v-if="r.cover" :src="r.cover" :alt="`${r.title} cover`" class="w-full aspect-[4/3] object-cover" loading="lazy" width="4" height="3" />
+                    <img v-if="r.cover" :src="r.cover" :srcset="r.coverSrcset || undefined" sizes="(max-width: 639px) calc(100vw - 32px), (max-width: 1023px) calc(50vw - 40px), 400px" :alt="`${r.title} cover`" class="w-full aspect-[4/3] object-cover" loading="lazy" width="4" height="3" />
                     <div class="p-4">
                         <h3 class="text-slate-900 font-medium">{{ r.title }}</h3>
                     </div>

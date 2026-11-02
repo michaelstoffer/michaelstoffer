@@ -24,7 +24,7 @@ const props = defineProps({
             <!-- Cover + Audio -->
             <aside class="lg:col-span-1">
                 <div class="rounded-2xl border border-slate-200 bg-white overflow-hidden">
-                    <img v-if="song.cover" :src="song.cover" :alt="song.title" class="w-full aspect-square object-cover" loading="lazy" />
+                    <img v-if="song.cover" :src="song.cover" :srcset="song.coverSrcset || undefined" sizes="(max-width: 1023px) calc(100vw - 32px), 400px" :alt="song.title" class="w-full aspect-square object-cover" fetchpriority="high" width="1" height="1" />
                     <div class="p-4">
                         <LazyAudioPlayer v-if="song.audioSrc" :src="song.audioSrc" :title="song.title" />
                         <p class="mt-3 text-sm text-slate-600" v-if="song.duration">

@@ -68,7 +68,7 @@ const props = defineProps({
                 <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <CaseStudyCard v-for="cs in props.caseStudies" :key="cs.slug"
                                    :title="cs.title" :summary="cs.summary" :href="`/software/${cs.slug}`"
-                                   :cover="cs.cover" :problem="cs.problem" :approach="cs.approach" :result="cs.result" :tags="cs.tags" />
+                                   :cover="cs.cover" :cover-srcset="cs.coverSrcset" :problem="cs.problem" :approach="cs.approach" :result="cs.result" :tags="cs.tags" />
                 </div>
 
                 <div class="mt-8 sm:hidden">
@@ -96,7 +96,7 @@ const props = defineProps({
             <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <article v-for="s in props.songs" :key="s.slug" class="rounded-2xl border border-slate-200 bg-white overflow-hidden">
                     <a :href="`/music/${s.slug}`" class="block">
-                        <img v-if="s.cover" :src="s.cover" :alt="s.title + ' cover'" class="w-full aspect-square object-cover" loading="lazy" width="1" height="1" />
+                        <img v-if="s.cover" :src="s.cover" :srcset="s.coverSrcset || undefined" sizes="(max-width: 639px) calc(100vw - 32px), (max-width: 1023px) calc(50vw - 40px), 400px" :alt="s.title + ' cover'" class="w-full aspect-square object-cover" loading="lazy" width="1" height="1" />
                         <div class="p-5">
                             <h3 class="text-lg font-semibold text-slate-900">{{ s.title }}</h3>
                             <p v-if="s.duration" class="mt-1 text-xs text-slate-500">{{ s.duration }}</p>

@@ -22,6 +22,7 @@ class HomeController extends Controller
             'title' => $cs['title'],
             'summary' => $cs['summary'] ?? $cs['result'] ?? '',
             'cover' => $cs['cover'] ?? null,
+            'coverSrcset' => $cs['coverSrcset'] ?? null,
             'problem' => $cs['problem'] ?? null,
             'approach' => $cs['approach'] ?? null,
             'result' => $cs['result'] ?? null,
@@ -40,6 +41,7 @@ class HomeController extends Controller
             'title' => $s['title'],
             'summary' => $s['summary'] ?? $s['description'] ?? '',
             'cover' => $s['cover'] ?? null,
+            'coverSrcset' => $s['coverSrcset'] ?? null,
             'duration' => $s['duration'] ?? null,
             'audioSrc' => $s['audioSrc'] ?? null,
         ])->all();
@@ -48,7 +50,7 @@ class HomeController extends Controller
             'caseStudies' => $caseStudies,
             'songs' => $songs,
             'latestPosts' => $latestPosts,
-            'amr' => '/media/music/apple_music_replay_25.mp4'
+            'amr' => '/media/music/apple_music_replay_25.mp4',
         ]);
     }
 }

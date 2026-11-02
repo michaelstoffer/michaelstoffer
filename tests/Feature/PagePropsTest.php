@@ -20,6 +20,16 @@ test('homepage caseStudies are capped at 3', function () {
     expect(count($props['caseStudies']))->toBeLessThan(4);
 });
 
+test('homepage cards include responsive cover candidates', function () {
+    $props = $this->get('/')->viewData('page')['props'];
+
+    $caseStudy = collect($props['caseStudies'])->firstWhere('coverSrcset', '!=', null);
+    $song = collect($props['songs'])->firstWhere('coverSrcset', '!=', null);
+
+    expect($caseStudy['coverSrcset'])->toContain('400w', '800w')
+        ->and($song['coverSrcset'])->toContain('400w', '800w');
+});
+
 test('homepage latestPosts are capped at 3', function () {
     $props = $this->get('/')->viewData('page')['props'];
     expect(count($props['latestPosts']))->toBeLessThan(4);
