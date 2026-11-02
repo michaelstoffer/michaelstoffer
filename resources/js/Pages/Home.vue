@@ -7,6 +7,7 @@ import SectionHeading from '@/Components/SectionHeading.vue'
 import BlogCard from "@/Components/BlogCard.vue";
 import CaseStudyCard from "@/Components/CaseStudyCard.vue";
 import LookingBack from "../Components/LookingBack.vue";
+import LazyAudioPlayer from '@/Components/LazyAudioPlayer.vue'
 
 const props = defineProps({
     latestPosts: { type: Array, default: () => [] },
@@ -102,7 +103,7 @@ const props = defineProps({
                             <p class="mt-2 text-slate-600 line-clamp-3">{{ s.summary }}</p>
                         </div>
                     </a>
-                    <div v-if="s.audioSrc" class="px-5 pb-5"><audio :src="s.audioSrc" controls class="w-full"></audio></div>
+                    <div v-if="s.audioSrc" class="px-5 pb-5"><LazyAudioPlayer :src="s.audioSrc" :title="s.title" /></div>
                 </article>
             </div>
 
