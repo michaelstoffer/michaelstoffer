@@ -13,7 +13,7 @@
         "laravel/mcp": "^1.1.2",
         "laravel/nightwatch": "^1.14",
         "laravel/telescope": "^5.13",
-        "laravel/tinker": "^2.10.1",
+        "laravel/tinker": "^3.0.2",
         "spatie/laravel-sitemap": "^7.3",
         "spatie/yaml-front-matter": "^2.1",
         "symfony/html-sanitizer": "^8.1"
