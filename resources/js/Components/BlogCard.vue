@@ -10,7 +10,9 @@ const props = defineProps({ post: { type: Object, required: true } })
                 <div class="mt-2 flex flex-wrap gap-2">
                     <span v-for="t in post.tags" :key="t" class="inline-flex items-center rounded-full border border-slate-300 bg-white px-2 py-0.5 text-xs text-slate-700">{{ t }}</span>
                 </div>
-                <p class="mt-2 text-xs text-slate-500">{{ new Date(post.published_at).toLocaleDateString() }}</p>
+                <p class="mt-2 text-xs text-slate-500">
+                    <time :datetime="post.published_at">{{ post.published_label }}</time>
+                </p>
                 <p class="mt-2 text-slate-600 line-clamp-3">{{ post.excerpt }}</p>
                 <span class="mt-3 inline-flex items-center text-sm font-medium text-slate-900 hover:underline">Read more</span>
             </div>

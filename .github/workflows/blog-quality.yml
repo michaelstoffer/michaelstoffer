@@ -1,0 +1,40 @@
+name: Blog quality
+
+on:
+  pull_request:
+    paths:
+      - 'app/Support/PostRepository.php'
+      - 'app/Console/Commands/ValidateBlogContent.php'
+      - 'resources/content/blog/**'
+      - 'resources/js/Components/BlogCard.vue'
+      - 'resources/js/Pages/Blog.vue'
+      - 'resources/js/Pages/Post.vue'
+      - 'tests/Fixtures/blog/**'
+      - 'tests/Unit/PostRepositoryTest.php'
+      - '.github/workflows/blog-quality.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          coverage: none
+
+      - name: Install PHP dependencies
+        run: composer install --no-interaction --no-progress --prefer-dist
+
+      - name: Validate blog content
+        run: php artisan blog:validate
+
+      - name: Test blog publishing behavior
+        run: php artisan test --compact tests/Unit/PostRepositoryTest.php tests/Feature/PagesTest.php

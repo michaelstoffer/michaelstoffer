@@ -36,8 +36,8 @@ const ld = {
             <header>
                 <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">{{ post.title }}</h1>
                 <p class="mt-2 text-xs text-slate-500">
-                    <time :datetime="post.published_at">{{ new Date(post.published_at).toLocaleDateString() }}</time>
-                    <span v-if="post.modified_at && post.modified_at !== post.published_at"> • Updated <time :datetime="post.modified_at">{{ new Date(post.modified_at).toLocaleDateString() }}</time></span>
+                    <time :datetime="post.published_at">{{ post.published_label }}</time>
+                    <span v-if="post.modified_at && post.modified_at !== post.published_at"> • Updated <time :datetime="post.modified_at">{{ post.modified_label }}</time></span>
                 </p>
 
                 <!-- Tags -->

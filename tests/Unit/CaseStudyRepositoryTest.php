@@ -2,6 +2,7 @@
 
 use App\Support\CaseStudyRepository;
 use Illuminate\Support\Facades\Cache;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 beforeEach(function () {
     Cache::forget('case:all');
@@ -21,13 +22,19 @@ test('each case study has required keys', function () {
     expect($case)->toHaveKeys(['slug', 'title', 'summary', 'tags', 'cover', 'featured']);
 });
 
-test('case studies are sorted alphabetically by title', function () {
+test('case studies honor software order before alphabetizing the remainder', function () {
     $repo = new CaseStudyRepository;
-    $titles = array_column($repo->all(), 'title');
-    $sorted = $titles;
-    usort($sorted, 'strcasecmp');
+    $items = $repo->all();
+    $ordered = array_values(array_filter($items, fn (array $item) => $item['software_order'] !== null));
+    $unordered = array_values(array_filter($items, fn (array $item) => $item['software_order'] === null));
 
-    expect($titles)->toBe($sorted);
+    expect(array_column($ordered, 'software_order'))->toBe([1, 2, 3]);
+
+    $titles = array_column($unordered, 'title');
+    $alphabetized = $titles;
+    usort($alphabetized, 'strcasecmp');
+
+    expect($titles)->toBe($alphabetized);
 });
 
 test('find returns a case study by slug', function () {
@@ -55,5 +62,5 @@ test('find throws 404 for unknown slug', function () {
     $repo = new CaseStudyRepository;
 
     expect(fn () => $repo->find('no-such-case-study'))
-        ->toThrow(\Symfony\Component\HttpKernel\Exception\HttpException::class);
+        ->toThrow(HttpException::class);
 });
