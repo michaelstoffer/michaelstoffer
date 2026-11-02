@@ -15,6 +15,9 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        $middleware->validateCsrfTokens(except: [
+            'csp-report',
+        ]);
         $middleware->append(CacheHeaders::class);
         $middleware->append(SecurityHeaders::class);
         $middleware->append(RobotsHeader::class);

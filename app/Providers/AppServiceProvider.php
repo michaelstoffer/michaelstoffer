@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\Vite;
 use Illuminate\Support\ServiceProvider;
 use Inertia\Inertia;
 
@@ -29,6 +30,12 @@ class AppServiceProvider extends ServiceProvider
         RateLimiter::for('contact', static function (Request $request) {
             return Limit::perMinute(1)->by($request->ip());
         });
+
+        RateLimiter::for('csp-reports', static function (Request $request) {
+            return Limit::perMinute(30)->by($request->ip());
+        });
+
+        Inertia::share('csp_nonce', static fn (): ?string => Vite::cspNonce());
 
         Inertia::share('site', [
             'name' => 'Michael Stoffer',

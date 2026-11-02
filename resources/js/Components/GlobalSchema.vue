@@ -16,6 +16,6 @@ const ld = [
 </script>
 <template>
     <Head>
-        <component is="script" type="application/ld+json">{{ JSON.stringify(ld) }}</component>
+        <component is="script" type="application/ld+json" :nonce="page.props.csp_nonce">{{ JSON.stringify(ld) }}</component>
     </Head>
 </template>

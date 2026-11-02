@@ -22,9 +22,10 @@ class BuildRedirectMap extends Command
         $legacy = $this->loadLegacy($this->option('legacy'));
 
         // Known post slugs from repository (swap for DB/Markdown source)
-        $posts = method_exists(app(), 'make') && class_exists(PostRepository::class)
-            ? array_map(fn ($p) => $p['slug'], app(PostRepository::class)->latest(500))
-            : [];
+        $posts = array_map(
+            fn ($post) => $post['slug'],
+            app(PostRepository::class)->latest(500),
+        );
 
         $map = [];
         foreach ($rows as $path) {
