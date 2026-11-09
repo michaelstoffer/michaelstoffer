@@ -9,7 +9,7 @@
         "php": "^8.4",
         "filament/filament": "^5.11",
         "inertiajs/inertia-laravel": "^3.5",
-        "laravel/framework": "^12.0",
+        "laravel/framework": "^13.40",
         "laravel/mcp": "^1.1.2",
         "laravel/nightwatch": "^1.14",
         "laravel/telescope": "^5.13",
