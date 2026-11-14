@@ -41,7 +41,7 @@ It's the kind of thing you build when you've watched enough small businesses man
 
 </div>
 
-**Day to day:** Laravel 12 · PHP 8.4 · Vue 3 · Inertia.js · Tailwind CSS 4 · Filament 4 · Pest · PHPStan · Vite · Laravel Forge · AWS
+**Day to day:** Laravel 12 · PHP 8.4 · Vue 3 · Inertia.js · Tailwind CSS 4 · Filament 5 · Pest · PHPStan · Vite · Laravel Forge · AWS
 
 **Currently exploring:** Laravel MCP · Laravel Nightwatch
 
