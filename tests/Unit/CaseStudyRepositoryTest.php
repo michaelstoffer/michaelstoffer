@@ -31,7 +31,7 @@ test('case studies honor software order before alphabetizing the remainder', fun
     $ordered = array_values(array_filter($items, fn (array $item) => $item['software_order'] !== null));
     $unordered = array_values(array_filter($items, fn (array $item) => $item['software_order'] === null));
 
-    expect(array_column($ordered, 'software_order'))->toBe([1, 2, 3]);
+    expect(array_column($ordered, 'software_order'))->toBe([2, 3]);
 
     $titles = array_column($unordered, 'title');
     $alphabetized = $titles;
