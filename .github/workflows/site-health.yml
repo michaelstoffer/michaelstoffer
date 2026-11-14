@@ -1,0 +1,58 @@
+name: Public site health
+
+on:
+  schedule:
+    - cron: '23 13 * * *'
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/site-health.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: public-site-health
+  cancel-in-progress: false
+
+jobs:
+  public-site:
+    name: Check live public pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+
+    steps:
+      - name: Check homepage, application health, and contact page
+        shell: bash
+        run: |
+          set -euo pipefail
+          response_file=$(mktemp)
+          trap 'rm -f "$response_file"' EXIT
+
+          for path in / /up /contact; do
+            url="https://michaelstoffer.com${path}"
+            status=$(curl --silent --show-error --fail --location \
+              --proto '=https' --proto-redir '=https' \
+              --connect-timeout 10 --max-time 30 \
+              --retry 2 --retry-all-errors --retry-delay 5 \
+              --output "$response_file" --write-out '%{http_code}' "$url")
+
+            if [ "$status" != 200 ]; then
+              echo "::error::${url} returned HTTP ${status}; expected 200."
+              exit 1
+            fi
+
+            if [ "$path" = /up ]; then
+              grep -Fq 'Application up' "$response_file" || {
+                echo '::error::The health endpoint did not return the expected application health page.'
+                exit 1
+              }
+            else
+              grep -Fq 'Michael Stoffer' "$response_file" || {
+                echo "::error::${url} did not return the expected website."
+                exit 1
+              }
+            fi
+
+            echo "PASS ${url} (HTTP ${status})"
+          done
