@@ -27,15 +27,22 @@ jobs:
         run: |
           set -euo pipefail
           response_file=$(mktemp)
-          trap 'rm -f "$response_file"' EXIT
+          headers_file=$(mktemp)
+          trap 'rm -f "$response_file" "$headers_file"' EXIT
 
           for path in / /up /contact; do
             url="https://michaelstoffer.com${path}"
-            status=$(curl --silent --show-error --fail --location \
+            if ! status=$(curl --silent --show-error --fail-with-body --location \
               --proto '=https' --proto-redir '=https' \
+              --user-agent 'MichaelStofferSiteHealth/1.0 (+https://github.com/michaelstoffer/michaelstoffer/actions)' \
               --connect-timeout 10 --max-time 30 \
               --retry 2 --retry-all-errors --retry-delay 5 \
-              --output "$response_file" --write-out '%{http_code}' "$url")
+              --dump-header "$headers_file" \
+              --output "$response_file" --write-out '%{http_code}' "$url"); then
+              echo "::error::${url} request failed (HTTP ${status})."
+              grep -Ei '^(HTTP/|server:|cf-mitigated:|cf-ray:)' "$headers_file" || true
+              exit 1
+            fi
 
             if [ "$status" != 200 ]; then
               echo "::error::${url} returned HTTP ${status}; expected 200."
