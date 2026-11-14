@@ -1,5 +1,6 @@
 ---
 slug: portfolio-reliability
+published_at: "2026-11-14T11:01:32-05:00"
 title: Keeping a Laravel Portfolio Reliable in Production
 summary: Production maintenance on my own Laravel and Vue website, covering dependency security checks, deployment recovery, and honest contact-form failure handling.
 problem: Passing application checks did not prevent a full server disk from blocking deployments, and contact submissions needed explicit handling when the mail transport failed.

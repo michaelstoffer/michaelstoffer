@@ -1,5 +1,6 @@
 ---
 slug: wakebot
+published_at: "2026-11-14T11:20:02-05:00"
 title: Wakebot — Community Automation for Nerrowake
 summary: A TypeScript Discord bot built for Nerrowake, bringing moderation, member participation, scheduled tasks, and configurable community workflows into one application.
 problem: Community management combines repeated staff actions, member interactions, and server-specific rules that need to stay understandable as features grow.

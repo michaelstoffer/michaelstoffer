@@ -21,7 +21,7 @@ class CaseStudyRepository
 
     public function all(): array
     {
-        return Cache::remember('case:all:v2', 3600, function () {
+        return Cache::remember('case:all:v3', 3600, function () {
             $items = [];
             foreach (glob($this->base.'/*/index.md') as $file) {
                 $doc = YamlFrontMatter::parseFile($file);
@@ -39,9 +39,17 @@ class CaseStudyRepository
                     'featured' => $m['featured'] ?? false,
                     'order' => $m['order'] ?? null,
                     'software_order' => $m['software_order'] ?? null,
+                    'published_at' => $m['published_at'] ?? null,
                 ];
             }
             usort($items, function ($a, $b) {
+                $aPublished = strtotime($a['published_at'] ?? '') ?: 0;
+                $bPublished = strtotime($b['published_at'] ?? '') ?: 0;
+
+                if ($aPublished !== $bPublished) {
+                    return $bPublished <=> $aPublished;
+                }
+
                 $aOrder = $a['software_order'] ?? null;
                 $bOrder = $b['software_order'] ?? null;
 

@@ -8,6 +8,7 @@ beforeEach(function () {
     Cache::forget('case:all');
     Cache::forget('case:hubspot-onboarding-sync');
     Cache::forget('case:all:v2');
+    Cache::forget('case:all:v3');
     Cache::forget('case:hubspot-onboarding-sync:v2');
     Cache::forget('case:unsafe:v2');
 });
@@ -25,9 +26,9 @@ test('each case study has required keys', function () {
     expect($case)->toHaveKeys(['slug', 'title', 'summary', 'tags', 'cover', 'featured']);
 });
 
-test('case studies honor software order before alphabetizing the remainder', function () {
+test('undated case studies retain software order before alphabetizing the remainder', function () {
     $repo = new CaseStudyRepository;
-    $items = $repo->all();
+    $items = array_values(array_filter($repo->all(), fn (array $item) => $item['published_at'] === null));
     $ordered = array_values(array_filter($items, fn (array $item) => $item['software_order'] !== null));
     $unordered = array_values(array_filter($items, fn (array $item) => $item['software_order'] === null));
 
@@ -38,6 +39,12 @@ test('case studies honor software order before alphabetizing the remainder', fun
     usort($alphabetized, 'strcasecmp');
 
     expect($titles)->toBe($alphabetized);
+});
+
+test('publication dates take priority over manual order and undated case studies', function () {
+    $repo = new CaseStudyRepository(base_path('tests/Fixtures/case-study-order'));
+
+    expect(array_column($repo->all(), 'slug'))->toBe(['newest', 'older', 'undated']);
 });
 
 test('find returns a case study by slug', function () {

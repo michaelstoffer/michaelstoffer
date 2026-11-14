@@ -1,5 +1,6 @@
 ---
 slug: the-oracles-trial
+published_at: "2026-11-14T11:01:32-05:00"
 title: The Oracle's Trial — Building Interacting Game Systems in C++
 summary: "A completed Full Sail coursework project: a Greek mythology-inspired console adventure with branching choices, player traits, inventory, and a puzzle across six temple rooms."
 problem: As the adventure grew, choices, inventory, puzzles, and room state needed to interact consistently without making the game flow difficult to maintain.
