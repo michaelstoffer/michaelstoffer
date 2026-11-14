@@ -30,7 +30,7 @@ Based in Orlando, FL. When I'm not writing code I'm usually behind a camera or m
 
 </div>
 
-**Day to day:** Laravel 12 · PHP 8.4 · Vue 3 · Inertia.js · Tailwind CSS 4 · Filament 5 · Pest · PHPStan · Vite · Laravel Forge · AWS
+**Day to day:** Laravel 12 · PHP 8.5 · Vue 3 · Inertia.js · Tailwind CSS 4 · Filament 5 · Pest · PHPStan · Vite · Laravel Forge · AWS
 
 **Currently exploring:** Laravel MCP · Laravel Nightwatch
 

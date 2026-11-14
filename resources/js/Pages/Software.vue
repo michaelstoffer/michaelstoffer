@@ -11,7 +11,7 @@ const props = defineProps({
 })
 
 const stack = [
-    { name: 'PHP 8.4', category: 'Language' },
+    { name: 'PHP 8.5', category: 'Language' },
     { name: 'Laravel', category: 'Framework' },
     { name: 'Vue 3', category: 'Frontend' },
     { name: 'Inertia.js', category: 'Frontend' },
