@@ -19,7 +19,7 @@ class ContactController extends Controller
         $data = $request->validated();
 
         // Send to site owner
-        Mail::to(config('mail.from.address'))
+        Mail::to(config('mail.contact_to'))
             ->send(new ContactMessage($data));
 
         // Optional: send copy to sender
