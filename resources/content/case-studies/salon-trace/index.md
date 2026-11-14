@@ -1,5 +1,6 @@
 ---
 slug: salon-trace
+published_at: "2026-11-14T09:59:27-05:00"
 title: Salon Trace — A Website Built Around the Client Journey
 summary: A custom salon website that brings service discovery, Head Spa experiences, and appointment inquiries together in a consistent digital experience.
 problem: Salon Trace needed an online presence that reflected its salon experience and helped visitors understand the services before getting in touch.
