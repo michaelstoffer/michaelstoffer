@@ -91,14 +91,15 @@ test('successful submission sets flash msg', function () use ($base) {
 
 // ── Email recipients ──────────────────────────────────────────────────────────
 
-test('owner receives the contact email', function () use ($base) {
+test('owner receives the contact email at the configured recipient address', function () use ($base) {
     Mail::fake();
+    config()->set('mail.contact_to', 'inbox@example.com');
 
     $this->withoutMiddleware(ThrottleRequests::class)
         ->post('/contact', $base);
 
     Mail::assertSent(ContactMessage::class, function (ContactMessage $mail) {
-        return $mail->hasTo(config('mail.from.address')) && $mail->copy === false;
+        return $mail->hasTo('inbox@example.com') && $mail->copy === false;
     });
 });
 
