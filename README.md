@@ -22,17 +22,6 @@ Based in Orlando, FL. When I'm not writing code I'm usually behind a camera or m
 
 ---
 
-## What I'm Building
-
-### [FieldOps Hub](https://github.com/michaelstoffer/fieldops-hub)
-A field service management platform for trades businesses — HVAC, plumbing, electrical, landscaping. The kind of software that replaces a whiteboard, a spreadsheet, and three different apps.
-
-Built with Laravel 12 + Vue 3 + TypeScript. Ships with live GPS technician tracking, multi-tier estimates customers can accept online, automated SMS/email at job milestones via Twilio and SendGrid, Stripe invoicing, and a mobile-optimized PWA with offline support. Role-based access across five permission levels, owner dashboards with profitability and technician performance metrics.
-
-It's the kind of thing you build when you've watched enough small businesses manage their entire operation through a group text.
-
----
-
 ## Stack
 
 <div align="center">
