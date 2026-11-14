@@ -7,7 +7,8 @@ approach: Separated responsibilities across Game, Player, Room, Item, and Puzzle
 result: A completed C++ console application with six connected rooms, choice-dependent interactions, inventory rewards, and documented final playthrough testing.
 cover: /media/software/the-oracles-trial/cover.webp
 tags: [C++, Game Development, Object-Oriented Design, Coursework]
-featured: false
+featured: true
+order: 1
 stack: [C++, Visual Studio, Git, GitHub]
 links:
   - href: https://youtu.be/KjAYiiyTRxk
