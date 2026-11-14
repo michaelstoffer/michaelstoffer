@@ -1,0 +1,53 @@
+name: Prepare Composer security updates
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    name: Update and audit PHP dependencies
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # 2.40.0
+        with:
+          php-version: '8.4'
+          coverage: none
+          tools: composer:v2
+
+      - name: Update affected dependency families within existing constraints
+        run: composer update "symfony/*" laravel/framework --with-all-dependencies --no-interaction --no-progress --prefer-dist
+
+      - name: Verify production dependency security
+        run: composer audit --locked --no-dev --abandoned=fail
+
+      - name: Run application tests
+        run: composer test
+
+      - name: Create reviewable pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- composer.lock; then
+            echo "No composer.lock changes were necessary."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b security/composer-advisory-updates
+          git add composer.lock
+          git commit -m "Update PHP dependencies to address security advisories"
+          git push origin security/composer-advisory-updates
+          gh pr create \
+            --base main \
+            --head security/composer-advisory-updates \
+            --title "Security: update vulnerable Composer dependencies" \
+            --body "Updates the Composer lockfile using existing version constraints. The workflow runs the production Composer audit and application test suite before opening this PR. Review all CI checks before merging."
