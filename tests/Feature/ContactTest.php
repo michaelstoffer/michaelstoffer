@@ -96,3 +96,50 @@ test('contact form is rate limited to one submission per minute', function () us
     $this->post('/contact', $validPayload)->assertRedirect();
     $this->post('/contact', $validPayload)->assertTooManyRequests();
 });
+
+test('owner mail transport failure returns an error without sending a sender copy', function () use ($validPayload) {
+    config()->set('mail.contact_to', 'owner@example.com');
+
+    $pending = Mockery::mock(\Illuminate\Mail\PendingMail::class);
+    $pending->shouldReceive('send')
+        ->once()
+        ->andThrow(new \Symfony\Component\Mailer\Exception\TransportException('Mail transport unavailable'));
+
+    Mail::shouldReceive('to')
+        ->once()
+        ->with('owner@example.com')
+        ->andReturn($pending);
+
+    $this->withoutMiddleware(ThrottleRequests::class)
+        ->post('/contact', $validPayload)
+        ->assertRedirect()
+        ->assertSessionHasErrors('message')
+        ->assertSessionMissing('flash.ok');
+});
+
+test('sender copy transport failure preserves successful owner delivery', function () use ($validPayload) {
+    config()->set('mail.contact_to', 'owner@example.com');
+
+    $ownerMail = Mockery::mock(\Illuminate\Mail\PendingMail::class);
+    $ownerMail->shouldReceive('send')->once()->andReturnNull();
+
+    $senderMail = Mockery::mock(\Illuminate\Mail\PendingMail::class);
+    $senderMail->shouldReceive('send')
+        ->once()
+        ->andThrow(new \Symfony\Component\Mailer\Exception\TransportException('Copy delivery failed'));
+
+    Mail::shouldReceive('to')
+        ->once()
+        ->with('owner@example.com')
+        ->andReturn($ownerMail);
+    Mail::shouldReceive('to')
+        ->once()
+        ->with($validPayload['email'])
+        ->andReturn($senderMail);
+
+    $this->withoutMiddleware(ThrottleRequests::class)
+        ->post('/contact', $validPayload)
+        ->assertRedirect()
+        ->assertSessionHas('flash.ok', true)
+        ->assertSessionHasNoErrors();
+});
