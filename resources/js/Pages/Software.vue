@@ -12,14 +12,14 @@ const props = defineProps({
 
 const stack = [
     { name: 'PHP 8.5', category: 'Language' },
-    { name: 'Laravel', category: 'Framework' },
+    { name: 'Laravel 13', category: 'Framework' },
     { name: 'Vue 3', category: 'Frontend' },
     { name: 'Inertia.js', category: 'Frontend' },
-    { name: 'Tailwind CSS', category: 'Frontend' },
+    { name: 'Tailwind CSS 4', category: 'Frontend' },
     { name: 'MySQL', category: 'Database' },
     { name: 'Redis', category: 'Cache / Queue' },
     { name: 'Pest / PHPUnit', category: 'Testing' },
-    { name: 'Filament', category: 'Admin' },
+    { name: 'Filament 5', category: 'Admin' },
     { name: 'Vite', category: 'Build' },
     { name: 'Git / GitHub', category: 'Version Control' },
     { name: 'REST APIs & Webhooks', category: 'Integrations' },
