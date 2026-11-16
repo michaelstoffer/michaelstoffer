@@ -8,20 +8,20 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MusicController;
 use App\Http\Controllers\PhotographyController;
 use App\Http\Controllers\SoftwareController;
-use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
+use Illuminate\Foundation\Http\Middleware\PreventRequestForgery;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Route;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 Route::post('/csp-report', CspReportController::class)
     ->middleware('throttle:csp-reports')
-    ->withoutMiddleware([StartSession::class, ShareErrorsFromSession::class, ValidateCsrfToken::class])
+    ->withoutMiddleware([StartSession::class, ShareErrorsFromSession::class, PreventRequestForgery::class])
     ->name('csp.report');
 
 // Read-only pages are intentionally stateless. This avoids creating a database
 // session and setting a session cookie for every anonymous visitor.
 Route::middleware([])
-    ->withoutMiddleware([StartSession::class, ShareErrorsFromSession::class, ValidateCsrfToken::class])
+    ->withoutMiddleware([StartSession::class, ShareErrorsFromSession::class, PreventRequestForgery::class])
     ->group(function (): void {
         Route::get('/', [HomeController::class, 'index'])->name('home');
         Route::get('/software', [SoftwareController::class, 'index'])->name('software');
